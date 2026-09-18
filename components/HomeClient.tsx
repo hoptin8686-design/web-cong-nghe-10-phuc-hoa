@@ -73,7 +73,7 @@ export default function HomeClient({
             </div>
             {/* Dòng chữ phụ đề tổ chuyên môn */}
             <p className="mt-2 font-mono text-xs sm:text-sm font-semibold text-leaf-deep tracking-wide">
-              Tổ Khoa học Tự nhiên & Công nghệ — Năm học 2026-2027
+              Tổ Tự nhiên năm 2026-2027
             </p>
           </div>
 
@@ -257,7 +257,7 @@ export default function HomeClient({
             Hệ thống Học tập & Ôn luyện Công nghệ Trồng trọt 10 — Trường THPT Phục Hòa
           </p>
           <p className="mt-1 font-mono">
-            Huyện Quảng Hòa, Tỉnh Cao Bằng · Biên soạn bởi Tổ KHTN & Công nghệ · Năm học 2026-2027
+            Huyện Quảng Hòa, Tỉnh Cao Bằng · Biên soạn bởi Tổ Tự nhiên năm 2026-2027
           </p>
           <p className="mt-2 text-[11px] text-star-soft/60">
             Nền tảng học tập trực tuyến bám sát chương trình GDPT 2018 Bộ sách Kết nối tri thức với cuộc sống.
