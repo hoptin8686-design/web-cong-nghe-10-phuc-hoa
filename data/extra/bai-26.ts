@@ -1,75 +1,176 @@
 import type { LessonExtra } from "@/lib/types";
 
-// Ngân hàng câu hỏi Đúng/Sai và Tự luận: Bài 26. Sự cần thiết phải bảo vệ môi trường trong trồng trọt
+// Ngân hàng câu hỏi Đúng/Sai (4 câu), Trả lời ngắn (4 câu) & Tự luận: Bài 26
 export const EXTRA_BAI_26: LessonExtra = {
   tf: [
     {
-      id: "tf-01",
-      context: "Khi nghiên cứu và thực hành kiến thức của Bài 26. Sự cần thiết phải bảo vệ môi trường trong trồng trọt:",
-      statements: [
-        {
-                "text": "Nội dung của bài học bám sát chương trình GDPT 2018 môn Công nghệ 10 - Trồng trọt.",
+        "id": "b26-tf1",
+        "context": "Tác động tiêu cực của hóa chất nông nghiệp đến môi trường:",
+        "statements": [
+            {
+                "text": "Lạm dụng phân bón hóa học liên tục làm đất chai cứng, chua hóa và suy giảm hệ vi sinh vật có ích.",
                 "answer": true,
-                "explain": "Đúng. Kiến thức được biên soạn theo chuẩn chương trình mới."
-        },
-        {
-                "text": "Ứng dụng khoa học kỹ thuật giúp gia tăng hiệu quả kinh tế và độ an toàn của sản phẩm.",
+                "explain": "Đúng. Phá vỡ kết cấu viên đất và tiêu diệt trùn đất, vi sinh vật đất."
+            },
+            {
+                "text": "Hiện tượng phú dưỡng ao hồ do dư lượng đạm lân bị rửa trôi kích thích tảo độc bùng phát làm chết cá.",
                 "answer": true,
-                "explain": "Đúng. Kỹ thuật tiến bộ là chìa khóa nâng cao năng suất và chất lượng."
-        },
-        {
-                "text": "Có thể tùy tiện bỏ qua các bước quy trình kỹ thuật mà vẫn đảm bảo năng suất tối đa.",
+                "explain": "Đúng. Tảo nở hoa làm cạn kiệt nguồn oxy hòa tan trong nước."
+            },
+            {
+                "text": "Thuốc bảo vệ thực vật hóa học chỉ tiêu diệt duy nhất sâu hại, hoàn toàn không làm chết các loài thiên địch.",
                 "answer": false,
-                "explain": "Sai. Quy trình kỹ thuật nông nghiệp đòi hỏi sự tuân thủ nghiêm ngặt từng giai đoạn sinh trưởng."
-        },
-        {
-                "text": "Việc kết hợp bảo vệ môi trường là yêu cầu bắt buộc trong nông nghiệp hiện đại.",
+                "explain": "Sai. Thuốc hóa học phổ rộng tiêu diệt sạch cả ong ký sinh, bọ rùa và nhện bắt mồi."
+            },
+            {
+                "text": "Bao bì thuốc BVTV vứt bừa bãi sau sử dụng gây ô nhiễm nghiêm trọng nguồn nước và môi trường sống.",
                 "answer": true,
-                "explain": "Đúng. Nông nghiệp bền vững luôn song hành cùng bảo vệ tài nguyên đất, nước và không khí."
-        }
-]
+                "explain": "Đúng. Rác thải độc hại nguy hiểm đe dọa trực tiếp sức khỏe cộng đồng."
+            }
+        ]
+    },
+    {
+        "id": "b26-tf2",
+        "context": "Ô nhiễm do đốt rơm rạ và phát thải khí nhà kính:",
+        "statements": [
+            {
+                "text": "Đốt rơm rạ lộ thiên trên đồng sinh ra lượng lớn bụi mịn PM2.5 và CO2 gây ô nhiễm không khí nặng nề.",
+                "answer": true,
+                "explain": "Đúng. Làm suy giảm chất lượng không khí và tăng hiệu ứng nhà kính."
+            },
+            {
+                "text": "Ruộng lúa ngập nước yếm khí liên tục phát thải lượng lớn khí Methane (CH4) gây biến đổi khí hậu.",
+                "answer": true,
+                "explain": "Đúng. Methane có tiềm năng gây nóng lên toàn cầu cao gấp 28 lần CO2."
+            },
+            {
+                "text": "Kỹ thuật 'Tưới ngập khô xen kẽ' (AWD) giúp giảm phát thải khí nhà kính từ 30-50% trên ruộng lúa.",
+                "answer": true,
+                "explain": "Đúng. Phơi ruộng xen kẽ đưa oxy ức chế vi khuẩn sinh methane."
+            },
+            {
+                "text": "Đốt rơm rạ trực tiếp trên đồng ruộng là giải pháp tốt nhất giúp đất màu mỡ và giữ ẩm đất hoàn hảo.",
+                "answer": false,
+                "explain": "Sai. Nhiệt độ lửa thiêu đốt chết sạch hệ vi sinh vật tầng mặt và làm chai cứng đất."
+            }
+        ]
+    },
+    {
+        "id": "b26-tf3",
+        "context": "Bảo vệ đất đồi dốc và nông nghiệp tuần hoàn:",
+        "statements": [
+            {
+                "text": "Canh tác xuôi sườn đồi dốc mà không có biện pháp che phủ làm đất bị xói mòn rửa trôi nghiêm trọng.",
+                "answer": true,
+                "explain": "Đúng. Mưa lũ cuốn trôi sạch tầng đất mặt màu mỡ."
+            },
+            {
+                "text": "Trồng băng cỏ Vetiver theo đường đồng mức giúp giữ đất, chống xói mòn sạt lở đồi dốc rất hiệu quả.",
+                "answer": true,
+                "explain": "Đúng. Bộ rễ sâu dày đặc của cỏ Vetiver đóng vai trò như đê sinh học."
+            },
+            {
+                "text": "Nông nghiệp tuần hoàn coi phế phụ phẩm của trồng trọt là rác thải vô giá trị bắt buộc phải vứt bỏ.",
+                "answer": false,
+                "explain": "Sai. Nông nghiệp tuần hoàn coi phế phụ phẩm là nguồn tài nguyên tái chế hữu ích."
+            },
+            {
+                "text": "Ủ rơm rạ, thân ngô làm phân hữu cơ compost là giải pháp tuần hoàn dinh dưỡng bảo vệ đất bền vững.",
+                "answer": true,
+                "explain": "Đúng. Trả lại chất hữu cơ cho đất và chấm dứt nạn đốt rơm rạ khói bụi."
+            }
+        ]
+    },
+    {
+        "id": "b26-tf4",
+        "context": "Hành động bảo vệ môi trường nông thôn tại Cao Bằng:",
+        "statements": [
+            {
+                "text": "Thu gom vỏ bao bì thuốc bảo vệ thực vật vào các bể chứa chuyên dụng giúp bảo vệ nguồn nước đầu nguồn.",
+                "answer": true,
+                "explain": "Đúng. Tránh rò rỉ hóa chất độc hại vào sông suối vùng cao."
+            },
+            {
+                "text": "Trồng cây phân xanh họ Đậu giúp cố định đạm tự nhiên và che phủ cải tạo đất đồi dốc cằn cỗi.",
+                "answer": true,
+                "explain": "Đúng. Cung cấp đạm sinh học và chống rửa trôi đất hiệu quả."
+            },
+            {
+                "text": "Nên dùng nước thải sinh hoạt chưa qua xử lý để tưới trực tiếp cho các luống rau ăn sống để tiết kiệm nước.",
+                "answer": false,
+                "explain": "Sai. Nước thải bẩn chứa nhiều vi khuẩn gây bệnh đường ruột và ký sinh trùng nguy hiểm."
+            },
+            {
+                "text": "Học sinh THPT Phục Hòa có thể tích cực tham gia phong trào 'Nói không với túi nilon và rác thải nhựa nông nghiệp'.",
+                "answer": true,
+                "explain": "Đúng. Lan tỏa lối sống xanh và ý thức trách nhiệm cộng đồng."
+            }
+        ]
     }
   ],
-    shortAnswer: [
+  shortAnswer: [
     {
         "id": "b26-sa1",
-        "q": "Sau khi phun thuốc trừ sâu bệnh hoá học, người nông dân cần thu gom bao bì, chai lọ rỗng bỏ vào đâu để bảo vệ môi trường?",
-        "unit": "Nơi chứa",
+        "q": "Hiện tượng ao hồ kênh mương bị ô nhiễm nghiêm trọng do dư lượng đạm và lân từ phân bón chảy xuống làm bùng phát tảo độc chết cá được gọi là hiện tượng gì?",
+        "unit": "Tên hiện tượng",
         "correctAnswers": [
-            "Bể chứa bao bì",
-            "bể chứa rác nguy hại",
-            "Hố rác chuyên dụng",
-            "Thùng rác",
-            "Bể thu gom"
+            "Phú dưỡng",
+            "phú dưỡng",
+            "Hiện tượng phú dưỡng"
         ],
-        "explain": "Vỏ bao thuốc BVTV là chất thải độc hại nguy hiểm, phải bỏ vào bể chứa xi măng có nắp đậy để tiêu hủy theo quy định."
+        "explain": "Phú dưỡng (Eutrophication) là hậu quả của sự dư thừa dưỡng chất khoáng trong môi trường nước."
     },
     {
         "id": "b26-sa2",
-        "q": "Bón thừa quá mức loại phân hoá học nào sẽ dẫn đến sự tích lũy chất nitrat (NO₃⁻) độc hại trong mô lá rau xanh?",
-        "unit": "Loại phân",
+        "q": "Loại khí nhà kính nguy hại phát thải chủ yếu từ quá trình phân hủy yếm khí rơm rạ trên ruộng lúa ngập nước liên tục có công thức hóa học là gì?",
+        "unit": "Công thức khí",
         "correctAnswers": [
-            "Phân đạm",
-            "phân đạm",
-            "Đạm",
-            "Phân urê",
-            "Phân đạm hoá học"
+            "CH4",
+            "ch4",
+            "Methane",
+            "methane",
+            "Metan",
+            "metan"
         ],
-        "explain": "Dư thừa đạm làm cây tích lũy nitrat không chuyển hóa hết, gây hại trực tiếp đến sức khỏe người tiêu dùng khi ăn phải."
-    }
-],
-  essay: [
-    {
-        "q": "Hãy nêu tóm tắt ý nghĩa và các bước chính cần lưu ý khi thực hiện nội dung trong Bài 26. Sự cần thiết phải bảo vệ môi trường trong trồng trọt.",
-        "answer": "- Ý nghĩa: Giúp người sản xuất nắm vững cơ sở khoa học, hạn chế rủi ro thiên tai dịch bệnh, gia tăng năng suất và giá trị kinh tế.\n- Các bước chính: 1. Khảo sát chuẩn bị kỹ lưỡng; 2. Tuân thủ nghiêm ngặt quy trình kỹ thuật; 3. Theo dõi, ghi chép và xử lý kịp thời các bất thường; 4. Thu hoạch và bảo quản đúng tiêu chuẩn an toàn.",
-        "id": "bai-26-essay1"
+        "explain": "Khí Methane (CH4) phát sinh mạnh mẽ trong điều kiện yếm khí ruộng lúa nước."
     },
     {
-        "q": "Liên hệ thực tế địa phương tại Cao Bằng đối với việc ứng dụng kiến thức của Bài 26. Sự cần thiết phải bảo vệ môi trường trong trồng trọt.",
-        "answer": "Cao Bằng có điều kiện khí hậu mát mẻ và thổ nhưỡng phù hợp với nhiều cây ăn quả đặc sản, chè, cây dược liệu và rau màu. Việc áp dụng đúng kỹ thuật sẽ giúp nâng cao thương hiệu nông sản địa phương, tạo việc làm và làm giàu bền vững cho bà con nông dân.",
-        "id": "bai-26-essay2"
+        "id": "b26-sa3",
+        "q": "Tên loài cỏ có bộ rễ đồ sộ ăn sâu hàng mét được trồng thành các băng chắn theo đường đồng mức để chống xói mòn sạt lở đất đồi dốc là cỏ gì?",
+        "unit": "Tên loài cỏ",
+        "correctAnswers": [
+            "Vetiver",
+            "vetiver",
+            "Cỏ Vetiver",
+            "cỏ vetiver"
+        ],
+        "explain": "Cỏ Vetiver là giải pháp công nghệ sinh học hàng đầu thế giới trong gia cố đất dốc."
+    },
+    {
+        "id": "b26-sa4",
+        "q": "Mô hình sản xuất nông nghiệp khép kín, trong đó phế phụ phẩm của quy trình này được tái chế làm nguyên liệu đầu vào cho quy trình khác được gọi là nông nghiệp gì?",
+        "unit": "Mô hình nông nghiệp",
+        "correctAnswers": [
+            "Tuần hoàn",
+            "tuần hoàn",
+            "Nông nghiệp tuần hoàn",
+            "nông nghiệp tuần hoàn"
+        ],
+        "explain": "Nông nghiệp tuần hoàn (Circular Agriculture) tái chế 100% phế phẩm, hướng tới không rác thải."
     }
-]
+  ],
+  essay: [
+    {
+        "id": "bai-26-essay1",
+        "q": "Phân tích 3 tác hại tiêu cực điển hình của việc lạm dụng phân bón hóa học và thuốc bảo vệ thực vật đối với môi trường sinh thái nông nghiệp.",
+        "answer": "1. Làm suy thoái và ô nhiễm đất trồng trọt:\n- Lạm dụng phân bón hóa học vô cơ (nhất là phân đạm và sunfat) làm đất bị chua hóa mạnh mẽ, đất bị chai cứng, phá hủy kết cấu viên đất tơi xốp, làm nghẹt rễ cây trồng.\n- Tiêu diệt các vi sinh vật có ích và trùn đất, làm mất cân bằng sinh học đất; phân bón dư thừa làm tích tụ các kim loại nặng độc hại (chì, cadimi, asen) từ quặng phân bón.\n2. Gây ô nhiễm nguồn nước mặt và nước ngầm (hiện tượng phú dưỡng):\n- Lượng phân đạm (N) và lân (P) dư thừa không được cây hấp thụ sẽ bị nước mưa rửa trôi xuống sông ngòi ao hồ, gây ra hiện tượng phú dưỡng (Eutrophication).\n- Tảo độc bùng phát nở hoa làm cạn kiệt oxy hòa tan, cá tôm và sinh vật thủy sinh chết ngạt hàng loạt; ion nitrat ngấm xuống tầng nước ngầm đe dọa trực tiếp nguồn nước giếng sinh hoạt của người dân.\n3. Tiêu diệt thiên địch, bùng phát dịch hại kháng thuốc và ô nhiễm thực phẩm:\n- Thuốc trừ sâu hóa học phổ rộng tiêu diệt sạch các loài thiên địch có ích (ong ký sinh, bọ rùa, nhện bắt mồi), phá vỡ cân bằng sinh thái tự nhiên khiến sâu hại nhanh chóng bùng phát thành đại dịch thứ cấp.\n- Tạo áp lực chọn lọc khiến các loài sâu hại nhanh chóng hình thành tính kháng thuốc; tồn dư thuốc BVTV độc hại trên nông sản gây ngộ độc mãn tính cho người tiêu dùng."
+    },
+    {
+        "id": "bai-26-essay2",
+        "q": "Đề xuất 4 giải pháp thiết thực để xây dựng nền nông nghiệp tuần hoàn, bảo vệ môi trường và giảm phát thải khí nhà kính tại tỉnh Cao Bằng.",
+        "answer": "1. Quản lý và tái chế phụ phẩm cây trồng:\n- Tuyệt đối không đốt rơm rạ, thân ngô ngoài đồng; tận dụng rơm rạ để trồng nấm rơm, làm đệm lót sinh học chăn nuôi và ủ cùng phân chuồng bằng nấm đối kháng Trichoderma tạo phân hữu cơ vi sinh bón lại cho đất.\n2. Bảo vệ đất đồi dốc chống xói mòn rửa trôi:\n- Quy hoạch canh tác theo đường đồng mức, xây dựng hệ thống bậc thang; trồng xen các băng cây cỏ Vetiver, cây họ Đậu che phủ đất giữ ẩm và chống rửa trôi dinh dưỡng trong mùa mưa lũ.\n3. Áp dụng kỹ thuật canh tác lúa giảm phát thải:\n- Triển khai kỹ thuật tưới ngập khô xen kẽ (AWD) trên các cánh đồng lúa nước để cắt đứt chu trình sinh khí Methane (CH4), vừa tiết kiệm nước vừa giảm phát thải khí nhà kính.\n4. Thu gom xử lý bao bì thuốc BVTV và nhân rộng mô hình sinh thái:\n- Xây dựng các bể xi măng có nắp đậy thu gom bao bì thuốc BVTV trên các cánh đồng, chuyển cơ quan chuyên môn tiêu hủy theo chuẩn chất thải nguy hại.\n- Nhân rộng mô hình IPM 'Ruộng lúa bờ hoa', ưu tiên dùng thuốc sinh học (Bt, nấm xanh, nấm trắng) bảo vệ sức khỏe cộng đồng và thiên nhiên vùng cao."
+    }
+  ]
 };
 
 export default EXTRA_BAI_26;
