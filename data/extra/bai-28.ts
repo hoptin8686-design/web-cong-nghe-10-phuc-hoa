@@ -30,6 +30,33 @@ export const EXTRA_BAI_28: LessonExtra = {
 ]
     }
   ],
+    shortAnswer: [
+    {
+        "id": "b28-sa1",
+        "q": "Nguồn phế phẩm nông nghiệp sau vụ thu hoạch lúa nước thường được tận dụng làm cơ chất chủ yếu để trồng nấm rơm là gì?",
+        "unit": "Tên nguyên liệu",
+        "correctAnswers": [
+            "Rơm rạ",
+            "rơm rạ",
+            "Rơm",
+            "Rơm lúa"
+        ],
+        "explain": "Rơm rạ sau khi gặt lúa chứa nhiều xenlulozo là nguồn cơ chất tự nhiên lý tưởng, rẻ tiền để nuôi trồng nấm rơm."
+    },
+    {
+        "id": "b28-sa2",
+        "q": "Khi xử lý rơm rạ trước khi ủ mô trồng nấm rơm, người ta thường ngâm rơm vào nước có pha thêm chất gì với nồng độ khoảng 1%?",
+        "unit": "Tên chất",
+        "correctAnswers": [
+            "Vôi bột",
+            "vôi",
+            "Nước vôi",
+            "Ca(OH)2",
+            "Vôi"
+        ],
+        "explain": "Nước vôi khử chua, diệt tạp nấm và làm mềm sợi rơm giúp hệ sợi nấm rơm dễ dàng đâm sâu hấp thụ dinh dưỡng."
+    }
+],
   essay: [
     {
         "q": "Hãy nêu tóm tắt ý nghĩa và các bước chính cần lưu ý khi thực hiện nội dung trong Bài 28. Thực hành: Sử dụng rơm, rạ để trồng nấm rơm.",

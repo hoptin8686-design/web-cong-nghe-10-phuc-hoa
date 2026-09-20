@@ -30,6 +30,30 @@ export const EXTRA_BAI_24: LessonExtra = {
 ]
     }
   ],
+    shortAnswer: [
+    {
+        "id": "b24-sa1",
+        "q": "Thiết bị bay không người lái ứng dụng phổ biến trong trồng trọt hiện đại để phun thuốc bảo vệ thực vật và rải phân bón gọi là gì?",
+        "unit": "Tên thiết bị",
+        "correctAnswers": [
+            "Drone",
+            "drone",
+            "Máy bay không người lái",
+            "Flycam"
+        ],
+        "explain": "Drone nông nghiệp định vị GPS phun thuốc tự động cực kỳ nhanh, đều hạt sương mịn và tránh ngộ độc hoá chất cho con người."
+    },
+    {
+        "id": "b24-sa2",
+        "q": "Viết tắt của thuật ngữ 'Internet vạn vật' dùng để kết nối các cảm biến đo nhiệt độ, độ ẩm đồng ruộng với máy chủ điều khiển là gì?",
+        "unit": "Từ viết tắt",
+        "correctAnswers": [
+            "IoT",
+            "iot"
+        ],
+        "explain": "IoT (Internet of Things) thu thập dữ liệu thời gian thực từ cảm biến để máy tính tự động bật quạt, tưới nước chính xác."
+    }
+],
   essay: [
     {
         "q": "Hãy nêu tóm tắt ý nghĩa và các bước chính cần lưu ý khi thực hiện nội dung trong Bài 24. Một số công nghệ cao trong trồng trọt.",

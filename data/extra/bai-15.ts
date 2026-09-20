@@ -30,6 +30,31 @@ export const EXTRA_BAI_15: LessonExtra = {
 ]
     }
   ],
+    shortAnswer: [
+    {
+        "id": "b15-sa1",
+        "q": "Vòng đời biến thái hoàn toàn của các loài sâu bướm hại cây trồng gồm mấy giai đoạn phát triển chính?",
+        "unit": "Số giai đoạn",
+        "correctAnswers": [
+            "4",
+            "4 giai đoạn",
+            "Bốn"
+        ],
+        "explain": "4 giai đoạn: Trứng -> Sâu non (ấu trùng cắn phá mạnh nhất) -> Nhộng -> Bướm trưởng thành."
+    },
+    {
+        "id": "b15-sa2",
+        "q": "Ba tác nhân vi sinh vật chính gây ra các bệnh truyền nhiễm nguy hiểm ở cây trồng là Nấm, Vi khuẩn và loài vi sinh vật siêu hiển vi nào?",
+        "unit": "Tên tác nhân",
+        "correctAnswers": [
+            "Virus",
+            "vi rút",
+            "Virus hại cây",
+            "Vi rút"
+        ],
+        "explain": "Virus (vi rút) thực vật xâm nhập qua vết thương cơ học hoặc qua côn trùng chích hút, gây các bệnh xoăn lá, khảm lá khó chữa."
+    }
+],
   essay: [
     {
         "q": "Hãy nêu tóm tắt ý nghĩa và các bước chính cần lưu ý khi thực hiện nội dung trong Bài 15. Sâu, bệnh hại cây trồng và ý nghĩa của việc phòng trừ.",

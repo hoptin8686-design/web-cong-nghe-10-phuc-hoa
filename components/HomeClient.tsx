@@ -225,7 +225,7 @@ export default function HomeClient({
                             <ScoreBadge best={lessonScore} />
                           )}
                           <span className="rounded-full bg-leaf/20 px-2 py-0.5 font-mono text-[10px] font-bold text-leaf-deep uppercase tracking-wider">
-                            Đầy đủ 4 phân hệ
+                            Đầy đủ 5 phân hệ
                           </span>
                         </div>
 
@@ -241,10 +241,10 @@ export default function HomeClient({
                       </div>
 
                       <div className="mt-3 flex items-center justify-between border-t border-white/5 pt-2.5 text-xs text-star-soft">
-                        <span className="flex items-center gap-1 font-mono text-[11px]">
-                          🌱 Lý thuyết · 🎯 Trắc nghiệm · ⚖️ Đúng/Sai · 📝 Tự luận
+                        <span className="flex items-center gap-1 font-mono text-[11px] truncate max-w-[260px] sm:max-w-none">
+                          🌱 Lý thuyết · 🎯 Trắc nghiệm · ⚖️ Đúng/Sai · ✍️ Trả lời ngắn
                         </span>
-                        <span className="font-display font-semibold text-leaf-deep group-hover:translate-x-0.5 transition">
+                        <span className="font-display font-semibold text-leaf-deep group-hover:translate-x-0.5 transition shrink-0">
                           Học bài →
                         </span>
                       </div>

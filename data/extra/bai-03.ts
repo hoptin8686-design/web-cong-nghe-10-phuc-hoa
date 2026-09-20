@@ -30,6 +30,32 @@ export const EXTRA_BAI_03: LessonExtra = {
 ]
     }
   ],
+    shortAnswer: [
+    {
+        "id": "b03-sa1",
+        "q": "Thành phần cơ giới của đất được phân loại dựa trên tỷ lệ phần trăm khối lượng của 3 cấp hạt nào? (Kể tên 3 cấp hạt)",
+        "unit": "3 cấp hạt",
+        "correctAnswers": [
+            "Cát, limon, sét",
+            "cát, limon, sét",
+            "Cát, bụi, sét",
+            "cát, bụi, sét",
+            "Cát, limon và sét"
+        ],
+        "explain": "Thành phần cơ giới chia theo tỷ lệ hạt cát (2 - 0.05 mm), limon/bụi (0.05 - 0.002 mm) và sét (< 0.002 mm)."
+    },
+    {
+        "id": "b03-sa2",
+        "q": "Một mẫu đất canh tác có độ pH đo được là 5.0. Mẫu đất này thuộc loại đất chua, đất trung tính hay đất kiềm?",
+        "unit": "Tính chất đất",
+        "correctAnswers": [
+            "Đất chua",
+            "chua",
+            "Chua"
+        ],
+        "explain": "Độ pH < 6.5 là đất chua; pH = 5.0 là đất chua nhiều do chứa nhiều ion H+ và Al3+ tự do."
+    }
+],
   essay: [
     {
         "q": "Hãy nêu tóm tắt ý nghĩa và các bước chính cần lưu ý khi thực hiện nội dung trong Bài 3. Giới thiệu về đất trồng.",

@@ -30,6 +30,33 @@ export const EXTRA_BAI_07: LessonExtra = {
 ]
     }
   ],
+    shortAnswer: [
+    {
+        "id": "b07-sa1",
+        "q": "Phân đạm Urê cung cấp nguyên tố dinh dưỡng đa lượng nào cho cây trồng?",
+        "unit": "Tên nguyên tố",
+        "correctAnswers": [
+            "Nitơ",
+            "nitơ",
+            "Đạm",
+            "đạm",
+            "N"
+        ],
+        "explain": "Phân Urê (CO(NH2)2) cung cấp nguyên tố đạm (Nitơ) thúc đẩy sinh trưởng thân, cành và phát triển lá."
+    },
+    {
+        "id": "b07-sa2",
+        "q": "Phân lân có vai trò nổi bật nhất trong việc kích thích sự phát triển của bộ phận nào của cây con?",
+        "unit": "Bộ phận cây",
+        "correctAnswers": [
+            "Bộ rễ",
+            "rễ",
+            "Bộ rễ của cây",
+            "Rễ cây"
+        ],
+        "explain": "Lân (P) kích thích rễ cây phân nhánh và đâm sâu, đồng thời xúc tiến quá trình phân hóa mầm hoa và đậu quả."
+    }
+],
   essay: [
     {
         "q": "Hãy nêu tóm tắt ý nghĩa và các bước chính cần lưu ý khi thực hiện nội dung trong Bài 7. Giới thiệu về phân bón.",

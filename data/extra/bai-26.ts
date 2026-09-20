@@ -30,6 +30,34 @@ export const EXTRA_BAI_26: LessonExtra = {
 ]
     }
   ],
+    shortAnswer: [
+    {
+        "id": "b26-sa1",
+        "q": "Sau khi phun thuốc trừ sâu bệnh hoá học, người nông dân cần thu gom bao bì, chai lọ rỗng bỏ vào đâu để bảo vệ môi trường?",
+        "unit": "Nơi chứa",
+        "correctAnswers": [
+            "Bể chứa bao bì",
+            "bể chứa rác nguy hại",
+            "Hố rác chuyên dụng",
+            "Thùng rác",
+            "Bể thu gom"
+        ],
+        "explain": "Vỏ bao thuốc BVTV là chất thải độc hại nguy hiểm, phải bỏ vào bể chứa xi măng có nắp đậy để tiêu hủy theo quy định."
+    },
+    {
+        "id": "b26-sa2",
+        "q": "Bón thừa quá mức loại phân hoá học nào sẽ dẫn đến sự tích lũy chất nitrat (NO₃⁻) độc hại trong mô lá rau xanh?",
+        "unit": "Loại phân",
+        "correctAnswers": [
+            "Phân đạm",
+            "phân đạm",
+            "Đạm",
+            "Phân urê",
+            "Phân đạm hoá học"
+        ],
+        "explain": "Dư thừa đạm làm cây tích lũy nitrat không chuyển hóa hết, gây hại trực tiếp đến sức khỏe người tiêu dùng khi ăn phải."
+    }
+],
   essay: [
     {
         "q": "Hãy nêu tóm tắt ý nghĩa và các bước chính cần lưu ý khi thực hiện nội dung trong Bài 26. Sự cần thiết phải bảo vệ môi trường trong trồng trọt.",

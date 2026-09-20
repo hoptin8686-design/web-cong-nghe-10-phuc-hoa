@@ -30,6 +30,33 @@ export const EXTRA_BAI_04: LessonExtra = {
 ]
     }
   ],
+    shortAnswer: [
+    {
+        "id": "b04-sa1",
+        "q": "Để khử chua cho đất đồi dốc và trung hòa các ion H⁺, Al³⁺ tự do, người nông dân thường sử dụng loại vật liệu hoá học thông dụng và rẻ tiền nào?",
+        "unit": "Tên chất",
+        "correctAnswers": [
+            "Vôi bột",
+            "vôi",
+            "Vôi",
+            "CaCO3",
+            "CaO",
+            "Vôi nông nghiệp"
+        ],
+        "explain": "Vôi bột (CaO hoặc CaCO3) cung cấp ion Ca2+ đẩy ion H+ và Al3+ ra khỏi keo đất để trung hòa độ chua."
+    },
+    {
+        "id": "b04-sa2",
+        "q": "Để ngăn chặn hiện tượng xói mòn và rửa trôi đất màu trên các sườn đồi dốc ở vùng núi phía Bắc, người ta thường làm ruộng có hình dạng gì?",
+        "unit": "Dạng ruộng",
+        "correctAnswers": [
+            "Ruộng bậc thang",
+            "ruộng bậc thang",
+            "Bậc thang"
+        ],
+        "explain": "Ruộng bậc thang cắt ngang dòng chảy mặt, giữ nước và đất màu phì nhiêu không bị cuốn trôi xuôi dốc."
+    }
+],
   essay: [
     {
         "q": "Hãy nêu tóm tắt ý nghĩa và các bước chính cần lưu ý khi thực hiện nội dung trong Bài 4. Sử dụng, cải tạo và bảo vệ đất trồng.",

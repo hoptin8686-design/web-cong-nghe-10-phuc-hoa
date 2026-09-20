@@ -30,6 +30,35 @@ export const EXTRA_BAI_14: LessonExtra = {
 ]
     }
   ],
+    shortAnswer: [
+    {
+        "id": "b14-sa1",
+        "q": "Khi ghép cành (ghép nêm hoặc ghép mắt), lớp tế bào nào giữa cành ghép và gốc ghép bắt buộc phải áp sát vào nhau để mô liền sẹo?",
+        "unit": "Thuật ngữ",
+        "correctAnswers": [
+            "Tầng sinh mô",
+            "tầng sinh mô",
+            "Tượng tầng",
+            "tượng tầng",
+            "Cambium",
+            "cambium"
+        ],
+        "explain": "Tầng sinh mô (cambium) là vùng phân chia tế bào; áp khít tầng sinh mô giúp nối liền mạch gỗ và mạch rây nuôi cành."
+    },
+    {
+        "id": "b14-sa2",
+        "q": "Sau khi ghép cây ăn quả, người ta thường dùng vật liệu gì để quấn chặt vết ghép nhằm giữ ẩm và chống nước mưa xâm nhập gây thối?",
+        "unit": "Vật liệu",
+        "correctAnswers": [
+            "Dây nilon",
+            "băng keo nilon",
+            "Nilon tự hủy",
+            "màng nilon",
+            "Dây quấn ghép"
+        ],
+        "explain": "Dây nilon chuyên dụng có độ đàn hồi tốt, quấn chặt kín vết ghép giúp cành không bị khô nước và ngăn ngừa vi khuẩn."
+    }
+],
   essay: [
     {
         "q": "Hãy nêu tóm tắt ý nghĩa và các bước chính cần lưu ý khi thực hiện nội dung trong Bài 14. Thực hành: Nhân giống cây ăn quả bằng phương pháp ghép.",

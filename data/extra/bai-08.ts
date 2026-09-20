@@ -30,6 +30,32 @@ export const EXTRA_BAI_08: LessonExtra = {
 ]
     }
   ],
+    shortAnswer: [
+    {
+        "id": "b08-sa1",
+        "q": "Nguyên tắc khoa học trong sử dụng phân bón cho cây trồng gồm 4 chữ 'đúng': Đúng loại, Đúng liều lượng, Đúng phương pháp và Đúng yếu tố nào nữa?",
+        "unit": "Yếu tố",
+        "correctAnswers": [
+            "Đúng thời điểm",
+            "đúng thời điểm",
+            "Thời điểm",
+            "Đúng lúc"
+        ],
+        "explain": "Nguyên tắc 4 đúng: Đúng loại phân - Đúng liều lượng - Đúng thời điểm cây cần - Đúng phương pháp bón."
+    },
+    {
+        "id": "b08-sa2",
+        "q": "Khi bón lót vào đất trước khi gieo hạt hoặc đặt cây con, người ta ưu tiên sử dụng phân chuồng hoai mục và loại phân vô cơ nào chậm tan?",
+        "unit": "Loại phân",
+        "correctAnswers": [
+            "Phân lân",
+            "phân lân",
+            "Lân",
+            "Phân hữu cơ và lân"
+        ],
+        "explain": "Phân lân tan chậm trong đất, cần thời gian tiếp xúc với keo đất và axit hữu cơ để hòa tan nên rất thích hợp bón lót."
+    }
+],
   essay: [
     {
         "q": "Hãy nêu tóm tắt ý nghĩa và các bước chính cần lưu ý khi thực hiện nội dung trong Bài 8. Sử dụng và bảo quản phân bón.",

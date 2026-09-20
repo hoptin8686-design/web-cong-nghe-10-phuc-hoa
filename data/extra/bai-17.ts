@@ -30,6 +30,31 @@ export const EXTRA_BAI_17: LessonExtra = {
 ]
     }
   ],
+    shortAnswer: [
+    {
+        "id": "b17-sa1",
+        "q": "Bệnh hại lúa phổ biến do nấm Pyricularia oryzae gây ra những vết bệnh hình thoi trên phiến lá lúa có tên gọi là bệnh gì?",
+        "unit": "Tên bệnh",
+        "correctAnswers": [
+            "Bệnh đạo ôn",
+            "đạo ôn",
+            "Đạo ôn lúa",
+            "Bệnh đạo ôn lúa"
+        ],
+        "explain": "Bệnh đạo ôn (cháy lá lúa) xuất hiện vết bệnh hình mắt én (hình thoi), tâm xám tro viền nâu, lây lan nhanh mùa sương mù."
+    },
+    {
+        "id": "b17-sa2",
+        "q": "Bệnh bạc lá lúa thường bùng phát sau những đợt mưa to gió bão lớn do tác nhân vi sinh vật nào gây ra?",
+        "unit": "Tác nhân",
+        "correctAnswers": [
+            "Vi khuẩn",
+            "vi khuẩn",
+            "Vi khuẩn Xanthomonas"
+        ],
+        "explain": "Vi khuẩn Xanthomonas oryzae xâm nhập qua vết rách tổn thương cơ học của lá lúa sau bão, làm mép lá bị cháy trắng bạc."
+    }
+],
   essay: [
     {
         "q": "Hãy nêu tóm tắt ý nghĩa và các bước chính cần lưu ý khi thực hiện nội dung trong Bài 17. Một số bệnh hại cây trồng thường gặp và biện pháp phòng trừ.",

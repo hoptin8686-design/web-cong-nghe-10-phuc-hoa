@@ -30,6 +30,31 @@ export const EXTRA_BAI_27: LessonExtra = {
 ]
     }
   ],
+    shortAnswer: [
+    {
+        "id": "b27-sa1",
+        "q": "Tên viết tắt của tập hợp các vi sinh vật hữu hiệu thường dùng để ủ phân compost và khử mùi hôi chuồng trại nông nghiệp là gì?",
+        "unit": "Tên chế phẩm",
+        "correctAnswers": [
+            "EM",
+            "em",
+            "Chế phẩm EM"
+        ],
+        "explain": "Chế phẩm EM (Effective Microorganisms) chứa nấm men, vi khuẩn quang dưỡng và vi khuẩn lactic phân hủy nhanh rác hữu cơ."
+    },
+    {
+        "id": "b27-sa2",
+        "q": "Quá trình ủ phân hữu cơ vi sinh từ phế phụ phẩm nông nghiệp tạo ra loại phân mùn giàu dinh dưỡng gọi là phân gì?",
+        "unit": "Tên phân",
+        "correctAnswers": [
+            "Phân compost",
+            "compost",
+            "Phân ủ compost",
+            "Phân vi sinh compost"
+        ],
+        "explain": "Phân compost là sản phẩm hoai mục sạch mầm bệnh, giàu mùn và vi sinh vật có ích bồi đắp độ phì cho đất."
+    }
+],
   essay: [
     {
         "q": "Hãy nêu tóm tắt ý nghĩa và các bước chính cần lưu ý khi thực hiện nội dung trong Bài 27. Ứng dụng công nghệ vi sinh trong bảo vệ môi trường và xử lí chất thải.",

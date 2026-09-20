@@ -30,6 +30,32 @@ export const EXTRA_BAI_19: LessonExtra = {
 ]
     }
   ],
+    shortAnswer: [
+    {
+        "id": "b19-sa1",
+        "q": "Khâu kỹ thuật đầu tiên trong quy trình trồng trọt nhằm diệt trừ cỏ dại, mầm bệnh và làm tơi xốp đất là khâu gì?",
+        "unit": "Tên khâu",
+        "correctAnswers": [
+            "Làm đất",
+            "làm đất",
+            "Cày bừa làm đất",
+            "Khâu làm đất"
+        ],
+        "explain": "Làm đất (cày sâu, bừa kỹ, lên luống) tạo môi trường thoáng khí, thoát nước tốt cho rễ cây hô hấp và hấp thụ dinh dưỡng."
+    },
+    {
+        "id": "b19-sa2",
+        "q": "Việc sử dụng máy cấy lúa hiện đại giúp đảm bảo mật độ gieo trồng đồng đều và tiết kiệm được yếu tố chi phí nào lớn nhất?",
+        "unit": "Chi phí",
+        "correctAnswers": [
+            "Chi phí nhân công",
+            "công lao động",
+            "Nhân công",
+            "Lao động"
+        ],
+        "explain": "Máy cấy cơ giới hóa giải phóng sức lao động nặng nhọc, giảm 70-80% chi phí thuê công cấy cấy tay truyền thống."
+    }
+],
   essay: [
     {
         "q": "Hãy nêu tóm tắt ý nghĩa và các bước chính cần lưu ý khi thực hiện nội dung trong Bài 19. Quy trình trồng trọt và cơ giới hoá trong trồng trọt.",

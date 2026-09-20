@@ -30,6 +30,30 @@ export const EXTRA_BAI_09: LessonExtra = {
 ]
     }
   ],
+    shortAnswer: [
+    {
+        "id": "b09-sa1",
+        "q": "Chi vi khuẩn nào sống cộng sinh ở nốt sần rễ cây họ Đậu có khả năng cố định đạm từ khí quyển?",
+        "unit": "Tên khoa học",
+        "correctAnswers": [
+            "Rhizobium",
+            "rhizobium",
+            "Vi khuẩn Rhizobium"
+        ],
+        "explain": "Vi khuẩn Rhizobium cộng sinh nốt sần chuyển hóa N2 trơ thành ion amoni nuôi sống cây họ Đậu và làm giàu đạm cho đất."
+    },
+    {
+        "id": "b09-sa2",
+        "q": "Phân vi sinh vật phân giải chất hữu cơ chứa các chủng vi sinh vật tiết ra enzym nào để phân hủy xác bã rơm rạ, mùn gỗ?",
+        "unit": "Tên enzym",
+        "correctAnswers": [
+            "Cellulase",
+            "cellulase",
+            "Enzym cellulase"
+        ],
+        "explain": "Enzym cellulase phân cắt các sợi cellulose dai chắc trong xác thực vật thành đường đơn cung cấp năng lượng cho đất."
+    }
+],
   essay: [
     {
         "q": "Hãy nêu tóm tắt ý nghĩa và các bước chính cần lưu ý khi thực hiện nội dung trong Bài 9. Sử dụng công nghệ vi sinh trong sản xuất phân bón.",

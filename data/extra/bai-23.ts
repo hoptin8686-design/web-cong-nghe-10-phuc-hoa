@@ -30,6 +30,31 @@ export const EXTRA_BAI_23: LessonExtra = {
 ]
     }
   ],
+    shortAnswer: [
+    {
+        "id": "b23-sa1",
+        "q": "Lớp lưới mịn bao quanh các vách nhà màng công nghệ cao có chức năng cơ bản hàng đầu là ngăn chặn sinh vật nào?",
+        "unit": "Tác nhân",
+        "correctAnswers": [
+            "Côn trùng",
+            "côn trùng",
+            "Sâu bọ",
+            "Côn trùng gây hại"
+        ],
+        "explain": "Lưới chắn côn trùng (50-60 mesh) ngăn chặn bọ trĩ, bướm sâu tơ, bọ phấn bay vào phá hại cây trồng bên trong nhà màng."
+    },
+    {
+        "id": "b23-sa2",
+        "q": "Hệ thống tưới nước kết hợp hòa tan phân bón chính xác đến từng gốc cây trong nhà màng gọi là hệ thống tưới gì?",
+        "unit": "Hệ thống tưới",
+        "correctAnswers": [
+            "Tưới nhỏ giọt",
+            "tưới nhỏ giọt",
+            "Tưới nhỏ giọt tự động"
+        ],
+        "explain": "Tưới nhỏ giọt (drip irrigation) cấp nước và dinh dưỡng chậm từng giọt tại vùng rễ hoạt động, tiết kiệm 40-50% nước và phân."
+    }
+],
   essay: [
     {
         "q": "Hãy nêu tóm tắt ý nghĩa và các bước chính cần lưu ý khi thực hiện nội dung trong Bài 23. Giới thiệu về trồng trọt công nghệ cao.",

@@ -30,6 +30,31 @@ export const EXTRA_BAI_20: LessonExtra = {
 ]
     }
   ],
+    shortAnswer: [
+    {
+        "id": "b20-sa1",
+        "q": "Công nghệ bao gói bảo quản nông sản tươi bằng cách chủ động điều chỉnh tỷ lệ khí O₂ và CO₂ trong bao bì gọi tắt là công nghệ gì?",
+        "unit": "Tên viết tắt",
+        "correctAnswers": [
+            "MAP",
+            "CA",
+            "MAP/CA",
+            "Khí quyển biến đổi"
+        ],
+        "explain": "MAP (Modified Atmosphere Packaging) hạ thấp O2 và tăng nhẹ CO2 để hãm quá trình hô hấp của quả, kéo dài độ tươi."
+    },
+    {
+        "id": "b20-sa2",
+        "q": "Phương pháp sấy nông sản hiện đại dựa trên nguyên lý thăng hoa của nước đá đóng băng dưới áp suất chân không gọi là gì?",
+        "unit": "Tên phương pháp",
+        "correctAnswers": [
+            "Sấy thăng hoa",
+            "sấy thăng hoa",
+            "Freeze drying"
+        ],
+        "explain": "Sấy thăng hoa giữ nguyên vẹn 100% hình dáng, màu sắc, hương vị tự nhiên và hàm lượng vitamin quý giá của nông sản."
+    }
+],
   essay: [
     {
         "q": "Hãy nêu tóm tắt ý nghĩa và các bước chính cần lưu ý khi thực hiện nội dung trong Bài 20. Công nghệ cao trong thu hoạch và bảo quản sản phẩm trồng trọt.",

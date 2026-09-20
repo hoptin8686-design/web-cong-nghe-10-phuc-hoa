@@ -30,6 +30,30 @@ export const EXTRA_BAI_01: LessonExtra = {
 ]
     }
   ],
+    shortAnswer: [
+    {
+        "id": "b01-sa1",
+        "q": "Ngành trồng trọt cung cấp nguồn tinh bột và dưỡng chất thiết yếu hàng ngày cho con người, giữ vai trò quyết định trong việc đảm bảo điều gì cho quốc gia?",
+        "unit": "Thuật ngữ",
+        "correctAnswers": [
+            "An ninh lương thực",
+            "an ninh lương thực",
+            "An ninh lương thực quốc gia"
+        ],
+        "explain": "Trồng trọt là nền tảng cốt lõi đảm bảo an ninh lương thực quốc gia và ổn định trật tự xã hội."
+    },
+    {
+        "id": "b01-sa2",
+        "q": "Cây lúa nước, ngô, khoai lang và sắn được xếp chung vào nhóm cây trồng nào theo mục đích sử dụng?",
+        "unit": "Nhóm cây",
+        "correctAnswers": [
+            "Cây lương thực",
+            "cây lương thực",
+            "Lương thực"
+        ],
+        "explain": "Các cây trồng cung cấp nguồn tinh bột chính cho con người và vật nuôi thuộc nhóm cây lương thực."
+    }
+],
   essay: [
     {
         "q": "Hãy phân tích vai trò của ngành trồng trọt đối với sự phát triển kinh tế và an ninh lương thực của Việt Nam.",

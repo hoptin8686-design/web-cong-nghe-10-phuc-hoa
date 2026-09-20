@@ -30,6 +30,30 @@ export const EXTRA_BAI_21: LessonExtra = {
 ]
     }
   ],
+    shortAnswer: [
+    {
+        "id": "b21-sa1",
+        "q": "Phương pháp chế biến rau củ truyền thống như làm dưa cải muối chua, kim chi dựa trên hoạt động của nhóm vi khuẩn nào?",
+        "unit": "Tên vi khuẩn",
+        "correctAnswers": [
+            "Vi khuẩn lactic",
+            "lactic",
+            "Vi khuẩn lên men lactic"
+        ],
+        "explain": "Vi khuẩn lactic lên men chuyển hóa đường thành axit lactic, tạo vị chua thơm ngon và ức chế vi khuẩn gây thối rữa."
+    },
+    {
+        "id": "b21-sa2",
+        "q": "Để tiêu diệt phần lớn vi sinh vật gây hại trong chế biến nước ép trái cây mà vẫn giữ được hương vị, người ta dùng phương pháp nhiệt gì?",
+        "unit": "Phương pháp",
+        "correctAnswers": [
+            "Thanh trùng",
+            "thanh trùng",
+            "Phương pháp thanh trùng"
+        ],
+        "explain": "Thanh trùng đun nóng ở nhiệt độ 70-85°C trong thời gian ngắn rồi làm lạnh nhanh, giúp bảo quản nước quả an toàn."
+    }
+],
   essay: [
     {
         "q": "Hãy nêu tóm tắt ý nghĩa và các bước chính cần lưu ý khi thực hiện nội dung trong Bài 21. Chế biến sản phẩm trồng trọt.",

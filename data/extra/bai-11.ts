@@ -30,6 +30,31 @@ export const EXTRA_BAI_11: LessonExtra = {
 ]
     }
   ],
+    shortAnswer: [
+    {
+        "id": "b11-sa1",
+        "q": "Khảo nghiệm VCU của một giống cây trồng mới là khảo nghiệm để đánh giá hai yếu tố: Giá trị canh tác và Giá trị gì của giống?",
+        "unit": "Yếu tố",
+        "correctAnswers": [
+            "Giá trị sử dụng",
+            "giá trị sử dụng",
+            "Sử dụng"
+        ],
+        "explain": "VCU (Value of Cultivation and Use) là khảo nghiệm bắt buộc nhằm xác định giá trị canh tác và giá trị sử dụng trước khi lưu hành."
+    },
+    {
+        "id": "b11-sa2",
+        "q": "Một giống cây trồng tốt cần đáp ứng tính chất nào để các thế hệ cây con sau khi gieo trồng vẫn giữ nguyên đặc tính vốn có?",
+        "unit": "Tính chất",
+        "correctAnswers": [
+            "Tính ổn định",
+            "tính ổn định di truyền",
+            "Ổn định",
+            "Tính đồng nhất và ổn định"
+        ],
+        "explain": "Tính ổn định di truyền đảm bảo các đặc tính vượt trội không bị phân ly hay thoái hóa qua các chu kỳ gieo trồng tiếp theo."
+    }
+],
   essay: [
     {
         "q": "Hãy nêu tóm tắt ý nghĩa và các bước chính cần lưu ý khi thực hiện nội dung trong Bài 11. Khái niệm và vai trò của giống cây trồng.",

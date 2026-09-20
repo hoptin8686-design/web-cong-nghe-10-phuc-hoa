@@ -30,6 +30,30 @@ export const EXTRA_BAI_16: LessonExtra = {
 ]
     }
   ],
+    shortAnswer: [
+    {
+        "id": "b16-sa1",
+        "q": "Loài sâu hại nguy hiểm bậc nhất trên cây bắp cải và rau họ Thập tự, có khả năng kháng thuốc bảo vệ thực vật hóa học rất nhanh là sâu gì?",
+        "unit": "Tên loài sâu",
+        "correctAnswers": [
+            "Sâu tơ",
+            "sâu tơ",
+            "Sâu tơ hại bắp cải"
+        ],
+        "explain": "Sâu tơ (Plutella xylostella) đẻ trứng nhiều, vòng đời ngắn và rất nhanh hình thành tính kháng thuốc hoá học."
+    },
+    {
+        "id": "b16-sa2",
+        "q": "Côn trùng chích hút nào là môi giới truyền bệnh virus vàng lùn, lùn xoắn lá gây thiệt hại nặng nề cho cây lúa nước?",
+        "unit": "Tên côn trùng",
+        "correctAnswers": [
+            "Rầy nâu",
+            "rầy nâu",
+            "Con rầy nâu"
+        ],
+        "explain": "Rầy nâu (Nilaparvata lugens) vừa chích hút nhựa gây cháy rầy vừa là môi giới truyền virus vàng lùn nguy hiểm trên lúa."
+    }
+],
   essay: [
     {
         "q": "Hãy nêu tóm tắt ý nghĩa và các bước chính cần lưu ý khi thực hiện nội dung trong Bài 16. Một số sâu hại cây trồng thường gặp và biện pháp phòng trừ.",

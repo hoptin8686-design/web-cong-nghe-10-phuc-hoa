@@ -30,6 +30,32 @@ export const EXTRA_BAI_22: LessonExtra = {
 ]
     }
   ],
+    shortAnswer: [
+    {
+        "id": "b22-sa1",
+        "q": "Chi tiết bắt buộc phải có ở dưới đáy chậu khi trồng hoa cây cảnh để tránh cho rễ cây bị nghẹt úng nước chết là chi tiết gì?",
+        "unit": "Bộ phận",
+        "correctAnswers": [
+            "Lỗ thoát nước",
+            "lỗ thoát nước",
+            "Lỗ đáy chậu",
+            "Lỗ thoát nước đáy chậu"
+        ],
+        "explain": "Lỗ thoát nước đáy chậu đảm bảo lượng nước tưới dư thừa thoát ra ngoài dễ dàng, cung cấp oxy cho rễ hô hấp."
+    },
+    {
+        "id": "b22-sa2",
+        "q": "Khi trồng hoa trong chậu, người ta thường bón loại phân hữu cơ giàu dinh dưỡng và an toàn vi sinh nào?",
+        "unit": "Loại phân",
+        "correctAnswers": [
+            "Phân trùn quế",
+            "phân trùn quế",
+            "Phân hữu cơ hoai mục",
+            "Trùn quế"
+        ],
+        "explain": "Phân trùn quế giàu mùn hữu cơ, chứa hệ vi sinh vật có ích và khoáng chất dạng rễ dễ hấp thu trực tiếp không gây xót rễ."
+    }
+],
   essay: [
     {
         "q": "Hãy nêu tóm tắt ý nghĩa và các bước chính cần lưu ý khi thực hiện nội dung trong Bài 22. Dự án trồng hoa trong chậu.",

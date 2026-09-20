@@ -30,6 +30,30 @@ export const EXTRA_BAI_12: LessonExtra = {
 ]
     }
   ],
+    shortAnswer: [
+    {
+        "id": "b12-sa1",
+        "q": "Phương pháp chọn tạo giống kết hợp vật chất di truyền của hai dòng/giống bố mẹ khác nhau để tạo biến dị tổ hợp gọi là phương pháp gì?",
+        "unit": "Phương pháp",
+        "correctAnswers": [
+            "Lai hữu tính",
+            "lai hữu tính",
+            "Phương pháp lai",
+            "Lai giống"
+        ],
+        "explain": "Lai hữu tính thụ phấn giữa 2 bố mẹ mang các tính trạng mong muốn để tạo ra con lai mang tổ hợp gen ưu tú."
+    },
+    {
+        "id": "b12-sa2",
+        "q": "Viết tắt tiếng Anh của thuật ngữ 'Cây trồng biến đổi gen' (Genetically Modified Organism) là gì?",
+        "unit": "Từ viết tắt",
+        "correctAnswers": [
+            "GMO",
+            "gmo"
+        ],
+        "explain": "GMO là cây trồng được can thiệp chuyển nạp đoạn ADN tái tổ hợp chứa gen quý (như kháng sâu bọ, kháng thuốc diệt cỏ)."
+    }
+],
   essay: [
     {
         "q": "Hãy nêu tóm tắt ý nghĩa và các bước chính cần lưu ý khi thực hiện nội dung trong Bài 12. Một số phương pháp chọn, tạo giống cây trồng.",

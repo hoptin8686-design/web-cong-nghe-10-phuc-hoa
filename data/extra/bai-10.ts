@@ -30,6 +30,34 @@ export const EXTRA_BAI_10: LessonExtra = {
 ]
     }
   ],
+    shortAnswer: [
+    {
+        "id": "b10-sa1",
+        "q": "Khi đốt hoặc đun nóng phân đạm Urê trên ngọn lửa, sẽ sinh ra chất khí có mùi khai đặc trưng là khí gì?",
+        "unit": "Tên khí",
+        "correctAnswers": [
+            "Khí amoniac",
+            "amoniac",
+            "NH3",
+            "Amoniac",
+            "khí NH3"
+        ],
+        "explain": "Nhiệt phân Urê tạo ra khí amoniac (NH3) có mùi khai nồng đặc trưng, dùng để nhận biết phân đạm."
+    },
+    {
+        "id": "b10-sa2",
+        "q": "Phân Kali Clorua thương phẩm phổ biến ở Việt Nam thường có màu sắc đặc trưng nào?",
+        "unit": "Màu sắc",
+        "correctAnswers": [
+            "Màu đỏ",
+            "màu đỏ gạch",
+            "Đỏ",
+            "Màu hồng đỏ",
+            "Đỏ gạch"
+        ],
+        "explain": "Phân kali clorua (KCl) thường có dạng muối hạt màu đỏ gạch hoặc màu hồng do lẫn khoáng oxit sắt tự nhiên."
+    }
+],
   essay: [
     {
         "q": "Hãy nêu tóm tắt ý nghĩa và các bước chính cần lưu ý khi thực hiện nội dung trong Bài 10. Thực hành: Nhận biết một số loại phân bón hoá học.",

@@ -30,6 +30,34 @@ export const EXTRA_BAI_05: LessonExtra = {
 ]
     }
   ],
+    shortAnswer: [
+    {
+        "id": "b05-sa1",
+        "q": "Mụn xơ dừa tự nhiên trước khi được sử dụng làm giá thể gieo trồng cây bắt buộc phải trải qua quá trình ngâm rửa để loại bỏ chất chát nào?",
+        "unit": "Chất hóa học",
+        "correctAnswers": [
+            "Tannin",
+            "tannin",
+            "Tanin",
+            "tanin",
+            "Tannin và lignin"
+        ],
+        "explain": "Chất chát tannin và lignin trong mụn dừa thô gây ức chế hô hấp của rễ non, cần ngâm xả nước vôi sạch trước khi trồng."
+    },
+    {
+        "id": "b05-sa2",
+        "q": "Tên loại đá núi lửa nhân tạo siêu nhẹ, màu trắng xốp, thường được phối trộn vào giá thể để tăng độ thoáng khí cho rễ cây là đá gì?",
+        "unit": "Tên đá",
+        "correctAnswers": [
+            "Perlite",
+            "perlite",
+            "Đá perlite",
+            "Đá trân châu",
+            "đá trân châu"
+        ],
+        "explain": "Đá trân châu (Perlite) được nung nở ở nhiệt độ cao, có cấu trúc xốp nhẹ, giữ ẩm và làm tơi xốp giá thể tối ưu."
+    }
+],
   essay: [
     {
         "q": "Hãy nêu tóm tắt ý nghĩa và các bước chính cần lưu ý khi thực hiện nội dung trong Bài 5. Giá thể trồng cây.",

@@ -30,6 +30,29 @@ export const EXTRA_BAI_25: LessonExtra = {
 ]
     }
   ],
+    shortAnswer: [
+    {
+        "id": "b25-sa1",
+        "q": "Phương pháp trồng cây không dùng đất mà rễ cây được treo lơ lửng trong không khí và được phun sương dinh dưỡng định kỳ gọi là gì?",
+        "unit": "Phương pháp",
+        "correctAnswers": [
+            "Khí canh",
+            "khí canh",
+            "Aeroponics"
+        ],
+        "explain": "Khí canh (Aeroponics) giúp rễ tiếp xúc tối đa với oxy, sinh trưởng nhanh gấp 1.5 - 2 lần so với các phương pháp trồng khác."
+    },
+    {
+        "id": "b25-sa2",
+        "q": "Tên viết tắt của hệ thống thủy canh hồi lưu màng mỏng dinh dưỡng chảy tuần hoàn qua đáy máng rọ trồng là gì?",
+        "unit": "Tên viết tắt",
+        "correctAnswers": [
+            "NFT",
+            "nft"
+        ],
+        "explain": "NFT (Nutrient Film Technique) duy trì dòng màng mỏng dinh dưỡng chảy liên tục qua rễ rồi hồi lưu về bể lọc."
+    }
+],
   essay: [
     {
         "q": "Hãy nêu tóm tắt ý nghĩa và các bước chính cần lưu ý khi thực hiện nội dung trong Bài 25. Công nghệ trồng cây không dùng đất.",

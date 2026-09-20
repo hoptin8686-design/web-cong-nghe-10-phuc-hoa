@@ -30,6 +30,33 @@ export const EXTRA_BAI_02: LessonExtra = {
 ]
     }
   ],
+    shortAnswer: [
+    {
+        "id": "b02-sa1",
+        "q": "Ba nguyên tố dinh dưỡng khoáng đa lượng thiết yếu nhất mà cây trồng cần hấp thụ với số lượng lớn là những nguyên tố nào? (Viết ký hiệu hóa học cách nhau bằng dấu phẩy hoặc gạch nối)",
+        "unit": "Ký hiệu hóa học",
+        "correctAnswers": [
+            "N, P, K",
+            "N-P-K",
+            "N,P,K",
+            "NPK",
+            "N P K"
+        ],
+        "explain": "Đạm (N), Lân (P), Kali (K) là 3 nguyên tố đa lượng quan trọng hàng đầu đối với sự sinh trưởng và năng suất cây trồng."
+    },
+    {
+        "id": "b02-sa2",
+        "q": "Nhờ vào bộ phận nào trên bề mặt lá mà cây có khả năng hấp thụ được hơi nước và các chất dinh dưỡng hòa tan khi bón phân qua lá?",
+        "unit": "Bộ phận tế bào",
+        "correctAnswers": [
+            "Khí khổng",
+            "khí khổng",
+            "Lỗ khí",
+            "lỗ khí"
+        ],
+        "explain": "Khí khổng ở biểu bì lá là cửa ngõ giúp cây trao đổi khí CO2, O2, thoát hơi nước và hấp thụ dinh dưỡng phun qua lá."
+    }
+],
   essay: [
     {
         "q": "Tại sao trong sản xuất nông nghiệp người ta thường trồng xen canh cây ưa sáng với cây ưa bóng?",

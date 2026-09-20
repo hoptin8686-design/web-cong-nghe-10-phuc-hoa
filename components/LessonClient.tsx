@@ -2,14 +2,15 @@
 
 import { useEffect, useState } from "react";
 import Link from "next/link";
-import type { EssayQuestion, LessonTheory, Question, TFQuestion } from "@/lib/types";
+import type { EssayQuestion, LessonTheory, Question, TFQuestion, ShortAnswerQuestion } from "@/lib/types";
 import { getLessonProgress, theoryKey, tfKey } from "@/lib/progress";
 import QuizClient from "@/components/QuizClient";
 import TrueFalseQuiz from "@/components/TrueFalseQuiz";
+import ShortAnswerClient from "@/components/ShortAnswerClient";
 import EssayViewer from "@/components/EssayViewer";
 import TheoryViewer from "@/components/TheoryViewer";
 
-type Mode = "menu" | "theory" | "mcq" | "tf" | "essay";
+type Mode = "menu" | "theory" | "mcq" | "tf" | "shortAnswer" | "essay";
 
 export default function LessonClient({
   lessonId,
@@ -18,6 +19,7 @@ export default function LessonClient({
   theory,
   mcq,
   tf,
+  shortAnswer = [],
   essay,
 }: {
   lessonId: string;
@@ -26,6 +28,7 @@ export default function LessonClient({
   theory: LessonTheory | null;
   mcq: Question[];
   tf: TFQuestion[];
+  shortAnswer?: ShortAnswerQuestion[];
   essay: EssayQuestion[];
 }) {
   const [mode, setMode] = useState<Mode>("menu");
@@ -71,7 +74,7 @@ export default function LessonClient({
           lessonTitle={lessonTitle}
           questions={mcq}
           onBack={() => leaveTo("menu")}
-          onGoNext={tf.length > 0 ? () => leaveTo("tf") : undefined}
+          onGoNext={tf.length > 0 ? () => leaveTo("tf") : shortAnswer.length > 0 ? () => leaveTo("shortAnswer") : undefined}
         />
       </main>
     );
@@ -86,13 +89,27 @@ export default function LessonClient({
           lessonTitle={lessonTitle}
           questions={tf}
           onBack={() => leaveTo("menu")}
+          onGoNext={shortAnswer.length > 0 ? () => leaveTo("shortAnswer") : essay.length > 0 ? () => leaveTo("essay") : undefined}
+        />
+      </main>
+    );
+  }
+
+  // 4. Chế độ Trả lời ngắn
+  if (mode === "shortAnswer" && shortAnswer.length > 0) {
+    return (
+      <main className="min-h-screen pb-16">
+        <ShortAnswerClient
+          lessonTitle={lessonTitle}
+          questions={shortAnswer}
+          onBack={() => leaveTo("menu")}
           onGoNext={essay.length > 0 ? () => leaveTo("essay") : undefined}
         />
       </main>
     );
   }
 
-  // 4. Chế độ Tự luận / Vận dụng thực tế
+  // 5. Chế độ Tự luận / Vận dụng thực tế
   if (mode === "essay") {
     return (
       <main className="min-h-screen pb-16">
@@ -231,7 +248,33 @@ export default function LessonClient({
             </button>
           )}
 
-          {/* Card 4: Tự luận & Vận dụng */}
+          {/* Card 4: Trả lời ngắn */}
+          {shortAnswer.length > 0 && (
+            <button
+              onClick={() => leaveTo("shortAnswer")}
+              className="flex flex-col justify-between rounded-2xl border border-coral/30 bg-void-card p-5 text-left shadow-card transition hover:-translate-y-1 hover:border-coral hover:shadow-card-hover cursor-pointer"
+            >
+              <div>
+                <div className="flex items-center justify-between">
+                  <span className="text-3xl">✍️</span>
+                  <span className="rounded-full bg-coral/15 px-2.5 py-0.5 font-mono text-[11px] font-bold text-coral-deep">
+                    {shortAnswer.length} câu hỏi
+                  </span>
+                </div>
+                <h3 className="mt-3 font-display text-lg font-bold text-star">
+                  Câu hỏi Trả lời ngắn
+                </h3>
+                <p className="mt-1 text-xs text-star-soft leading-relaxed">
+                  Luyện điền số liệu, thuật ngữ kỹ thuật chính xác theo cấu trúc đề thi mới nhất của Bộ GD&ĐT.
+                </p>
+              </div>
+              <span className="mt-4 inline-flex items-center font-display text-xs font-bold text-coral-deep">
+                Luyện trả lời ngắn ngay →
+              </span>
+            </button>
+          )}
+
+          {/* Card 5: Tự luận & Vận dụng */}
           {essay.length > 0 && (
             <button
               onClick={() => leaveTo("essay")}

@@ -30,6 +30,34 @@ export const EXTRA_BAI_06: LessonExtra = {
 ]
     }
   ],
+    shortAnswer: [
+    {
+        "id": "b06-sa1",
+        "q": "Chỉ số EC trong dung dịch đất đo lường đại lượng vật lý nào để phản ánh nồng độ muối khoáng hòa tan?",
+        "unit": "Đại lượng",
+        "correctAnswers": [
+            "Độ dẫn điện",
+            "độ dẫn điện",
+            "Độ dẫn điện của dung dịch",
+            "Dẫn điện"
+        ],
+        "explain": "EC (Electrical Conductivity) là độ dẫn điện của dung dịch, tỷ lệ thuận với tổng lượng ion muối hòa tan trong đất."
+    },
+    {
+        "id": "b06-sa2",
+        "q": "Khoảng giá trị pH tối ưu của đất phù hợp cho đa số các loài cây trồng nông nghiệp sinh trưởng tốt là bao nhiêu?",
+        "unit": "Khoảng pH",
+        "correctAnswers": [
+            "5.5 - 6.5",
+            "5.5-6.5",
+            "5,5 - 6,5",
+            "5.5 đến 6.5",
+            "6.0 - 7.0",
+            "5.5 - 7.0"
+        ],
+        "explain": "Khoảng pH từ 5.5 đến 6.5 là khoảng trung tính lý tưởng giúp hầu hết các chất khoáng hòa tan ở dạng rễ dễ hấp thu nhất."
+    }
+],
   essay: [
     {
         "q": "Hãy nêu tóm tắt ý nghĩa và các bước chính cần lưu ý khi thực hiện nội dung trong Bài 6. Thực hành: Xác định độ chua và độ mặn của đất.",

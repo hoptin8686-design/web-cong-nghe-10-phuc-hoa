@@ -30,6 +30,30 @@ export const EXTRA_BAI_18: LessonExtra = {
 ]
     }
   ],
+    shortAnswer: [
+    {
+        "id": "b18-sa1",
+        "q": "Viết tắt tên loài vi khuẩn sinh học sinh độc tố tinh thể delta-endotoxin diệt sâu non bộ Cánh vảy là gì?",
+        "unit": "Tên viết tắt",
+        "correctAnswers": [
+            "Bt",
+            "vi khuẩn Bt",
+            "Bacillus thuringiensis"
+        ],
+        "explain": "Chế phẩm Bt (Bacillus thuringiensis) an toàn tuyệt đối cho người và động vật máu nóng, chỉ gây độc cho sâu non trong ruột kiềm."
+    },
+    {
+        "id": "b18-sa2",
+        "q": "Chi nấm đối kháng sinh học nào thường được người nông dân tưới vào đất để kiểm soát nấm bệnh thối rễ, lở cổ rễ cây trồng?",
+        "unit": "Tên nấm",
+        "correctAnswers": [
+            "Trichoderma",
+            "trichoderma",
+            "Nấm Trichoderma"
+        ],
+        "explain": "Nấm Trichoderma ký sinh và tiết enzym phân hủy sợi nấm bệnh (Fusarium, Rhizoctonia), kích thích bộ rễ phát triển khỏe mạnh."
+    }
+],
   essay: [
     {
         "q": "Hãy nêu tóm tắt ý nghĩa và các bước chính cần lưu ý khi thực hiện nội dung trong Bài 18. Ứng dụng công nghệ vi sinh trong phòng trừ sâu, bệnh hại.",

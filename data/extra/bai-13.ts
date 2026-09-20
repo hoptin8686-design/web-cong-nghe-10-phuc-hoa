@@ -30,6 +30,30 @@ export const EXTRA_BAI_13: LessonExtra = {
 ]
     }
   ],
+    shortAnswer: [
+    {
+        "id": "b13-sa1",
+        "q": "Kỹ thuật nhân giống vô tính trong phòng thí nghiệm dựa trên tính toàn năng của tế bào thực vật trong điều kiện vô trùng gọi là gì?",
+        "unit": "Phương pháp",
+        "correctAnswers": [
+            "Nuôi cấy mô",
+            "nuôi cấy mô tế bào",
+            "Nuôi cấy mô in vitro",
+            "In vitro"
+        ],
+        "explain": "Nuôi cấy mô tế bào (In vitro) nhân nhanh số lượng lớn cây giống sạch virus và giữ nguyên 100% đặc tính cây mẹ."
+    },
+    {
+        "id": "b13-sa2",
+        "q": "Phương pháp nhân giống vô tính cắt một đoạn cành bánh tẻ rồi cắm vào giá thể giữ ẩm để kích thích ra rễ gọi là phương pháp gì?",
+        "unit": "Tên phương pháp",
+        "correctAnswers": [
+            "Giâm cành",
+            "giâm cành"
+        ],
+        "explain": "Giâm cành sử dụng đoạn cành có chồi ngủ, dưới tác dụng của auxin sẽ tái sinh rễ phụ tạo cây con mới."
+    }
+],
   essay: [
     {
         "q": "Hãy nêu tóm tắt ý nghĩa và các bước chính cần lưu ý khi thực hiện nội dung trong Bài 13. Nhân giống cây trồng.",
