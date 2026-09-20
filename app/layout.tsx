@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Inter, IBM_Plex_Mono } from "next/font/google";
+import Header from "@/components/Header";
 import "./globals.css";
 
 const body = Inter({
@@ -33,9 +34,10 @@ export default function RootLayout({
   return (
     <html lang="vi" className="scroll-smooth">
       <body
-        className={`${body.variable} ${mono.variable} font-body text-star antialiased selection:bg-leaf selection:text-void playground`}
+        className={`${body.variable} ${mono.variable} font-body text-star antialiased selection:bg-leaf selection:text-void playground min-h-screen flex flex-col`}
       >
-        {children}
+        <Header />
+        <div className="flex-1">{children}</div>
       </body>
     </html>
   );

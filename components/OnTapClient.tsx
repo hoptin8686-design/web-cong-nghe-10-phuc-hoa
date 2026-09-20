@@ -4,14 +4,18 @@ import { useState, useEffect } from "react";
 import Link from "next/link";
 import confetti from "canvas-confetti";
 import { MOCK_EXAMS, type MockExam } from "@/data/mockExams";
+import { Clock, Award, RotateCcw, CheckCircle2, User, GraduationCap, FileText } from "lucide-react";
 
 export default function OnTapClient() {
   const [selectedExam, setSelectedExam] = useState<MockExam | null>(null);
+  const [studentName, setStudentName] = useState("");
+  const [className, setClassName] = useState("");
   
   // Trạng thái câu trả lời của thí sinh
   const [answers, setAnswers] = useState<Record<number, number>>({}); // Phần I: index -> optionIndex
   const [tfAnswers, setTfAnswers] = useState<Record<string, boolean>>({}); // Phần II: `${qIdx}-${sIdx}` -> boolean
-  const [essayInputs, setEssayInputs] = useState<Record<number, string>>({}); // Phần III: index -> text
+  const [shortAnswers, setShortAnswers] = useState<Record<number, string>>({}); // Phần III: index -> string
+  const [essayInputs, setEssayInputs] = useState<Record<number, string>>({}); // Vận dụng mở rộng
   const [showEssayAnswers, setShowEssayAnswers] = useState<Record<number, boolean>>({}); // Toggle xem đáp án
   
   const [activeTab, setActiveTab] = useState<"all" | "part1" | "part2" | "part3">("all");
@@ -38,6 +42,7 @@ export default function OnTapClient() {
     setSelectedExam(exam);
     setAnswers({});
     setTfAnswers({});
+    setShortAnswers({});
     setEssayInputs({});
     setShowEssayAnswers({});
     setSubmitted(false);
@@ -57,6 +62,11 @@ export default function OnTapClient() {
     setTfAnswers((prev) => ({ ...prev, [key]: val }));
   };
 
+  const handleShortAnswerChange = (qIdx: number, val: string) => {
+    if (submitted) return;
+    setShortAnswers((prev) => ({ ...prev, [qIdx]: val }));
+  };
+
   const handleEssayChange = (qIdx: number, val: string) => {
     setEssayInputs((prev) => ({ ...prev, [qIdx]: val }));
   };
@@ -65,9 +75,19 @@ export default function OnTapClient() {
     setShowEssayAnswers((prev) => ({ ...prev, [qIdx]: !prev[qIdx] }));
   };
 
+  // Hàm kiểm tra đáp án câu trả lời ngắn
+  const checkShortAnswer = (userInput: string, correctList: string[]): boolean => {
+    if (!userInput || !userInput.trim()) return false;
+    const cleanUser = userInput.trim().toLowerCase().replace(/\s+/g, " ");
+    return correctList.some((ans) => {
+      const cleanAns = ans.trim().toLowerCase().replace(/\s+/g, " ");
+      return cleanUser === cleanAns || cleanUser.includes(cleanAns) || cleanAns.includes(cleanUser);
+    });
+  };
+
   // Tính điểm theo đúng chuẩn ma trận Bộ GD&ĐT
   const calculateScores = () => {
-    if (!selectedExam) return { scoreP1: 0, scoreP2: 0, totalScore: 0, p1Correct: 0, p2Details: [] };
+    if (!selectedExam) return { scoreP1: 0, scoreP2: 0, scoreP3: 0, totalScore: 0, p1Correct: 0, p3Correct: 0, p2Details: [] };
 
     // Phần I: 24 câu trắc nghiệm nhiều lựa chọn × 0.25 điểm = 6.0 điểm
     let p1Correct = 0;
@@ -93,11 +113,22 @@ export default function OnTapClient() {
       scoreP2 += pts;
       p2Details.push({ correctCount: count, points: pts });
     });
-
     scoreP2 = Number(scoreP2.toFixed(2));
-    const totalScore = Number((scoreP1 + scoreP2).toFixed(2));
 
-    return { scoreP1, scoreP2, totalScore, p1Correct, p2Details };
+    // Phần III: 4 câu trả lời ngắn (Chuẩn đề: mỗi câu đúng 0.25 điểm = 1.0 điểm nếu tính thang 10 gộp, hoặc chấm theo thang điểm)
+    let p3Correct = 0;
+    (selectedExam.shortAnswerQuestions || []).forEach((q, qIdx) => {
+      const userVal = shortAnswers[qIdx] || "";
+      if (checkShortAnswer(userVal, q.correctAnswers)) {
+        p3Correct++;
+      }
+    });
+    const scoreP3 = Number((p3Correct * 0.25).toFixed(2));
+
+    // Tổng điểm tự động: Phần I (6.0) + Phần II (4.0) = 10.0 điểm chuẩn (Phần III cộng điểm thưởng hoặc tính theo thang điểm chi tiết)
+    const totalScore = Number(Math.min(10, scoreP1 + scoreP2).toFixed(2));
+
+    return { scoreP1, scoreP2, scoreP3, totalScore, p1Correct, p3Correct, p2Details };
   };
 
   const handleSubmit = () => {
@@ -123,10 +154,10 @@ export default function OnTapClient() {
     return `${m.toString().padStart(2, "0")}:${s.toString().padStart(2, "0")}`;
   };
 
-  // MÀN HÌNH 1: DANH SÁCH CHỌN ĐỀ ÔN TẬP
+  // MÀN HÌNH 1: THÔNG TIN THÍ SINH & CHỌN ĐỀ ÔN TẬP
   if (!selectedExam) {
     return (
-      <main className="min-h-screen px-4 py-12 sm:px-6">
+      <main className="min-h-screen px-4 py-10 sm:px-6">
         <div className="mx-auto max-w-4xl">
           <div className="text-center">
             <Link
@@ -137,22 +168,61 @@ export default function OnTapClient() {
             </Link>
             
             <div className="mt-4 inline-flex items-center gap-2 rounded-full bg-leaf/15 px-4 py-1 font-mono text-xs font-bold text-leaf-deep">
-              <span>🌾</span> Cấu trúc mới nhất GDPT 2018
+              <span>🌾</span> Cấu trúc mới nhất GDPT 2018 — Bộ GD&ĐT
             </div>
 
             <h1 className="mt-3 font-display text-2xl sm:text-4xl font-extrabold text-star">
-              🎯 Ôn tập & Kiểm tra Định kì — Công nghệ Trồng trọt 10
+              🎯 Phòng Thi Thử Trực Tuyến — Công nghệ Trồng trọt 10
             </h1>
             <p className="mx-auto mt-3 max-w-2xl text-sm sm:text-base text-star-soft leading-relaxed">
-              Bộ đề kiểm tra chuẩn cấu trúc Bộ GD&ĐT gồm <strong>24 câu Trắc nghiệm nhiều lựa chọn</strong> (Phần I), <strong>4 câu Lựa chọn Đúng/Sai</strong> (Phần II) và <strong>4 câu Vận dụng thực tiễn</strong> (Phần III).
+              Hệ thống phòng thi chuẩn hóa gồm đúng 3 phần: <strong>24 câu Trắc nghiệm nhiều lựa chọn</strong>, <strong>4 câu Trả lời Đúng/Sai (16 ý)</strong> và <strong>4 câu Trắc nghiệm Trả lời ngắn</strong>.
             </p>
           </div>
 
-          <div className="mt-10 space-y-6">
+          {/* Khung nhập thông tin thí sinh */}
+          <div className="mt-8 rounded-3xl border-2 border-star/15 bg-void-card p-6 shadow-card">
+            <h2 className="font-display text-base sm:text-lg font-bold text-star flex items-center gap-2">
+              <User className="w-5 h-5 text-leaf-deep" />
+              <span>Thông tin Thí sinh tham gia dự thi</span>
+            </h2>
+            <div className="mt-4 grid grid-cols-1 gap-4 sm:grid-cols-2">
+              <div>
+                <label className="block font-mono text-xs text-star-soft mb-1.5">
+                  Họ và tên học sinh:
+                </label>
+                <div className="relative">
+                  <input
+                    type="text"
+                    value={studentName}
+                    onChange={(e) => setStudentName(e.target.value)}
+                    placeholder="Ví dụ: Nông Văn Hoàng..."
+                    className="w-full rounded-xl border border-star/20 bg-void/50 px-4 py-2.5 text-sm text-star placeholder-star-soft/40 focus:border-leaf focus:outline-none transition"
+                  />
+                </div>
+              </div>
+              <div>
+                <label className="block font-mono text-xs text-star-soft mb-1.5">
+                  Lớp học (Trường THPT Phục Hòa):
+                </label>
+                <div className="relative">
+                  <input
+                    type="text"
+                    value={className}
+                    onChange={(e) => setClassName(e.target.value)}
+                    placeholder="Ví dụ: 10A1, 10A2..."
+                    className="w-full rounded-xl border border-star/20 bg-void/50 px-4 py-2.5 text-sm text-star placeholder-star-soft/40 focus:border-leaf focus:outline-none transition"
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* Danh sách đề thi */}
+          <div className="mt-8 space-y-6">
             {MOCK_EXAMS.map((exam) => {
               const mcqCount = exam.questions.length;
               const tfCount = exam.tfQuestions?.length || 0;
-              const essayCount = exam.essayQuestions?.length || 0;
+              const saCount = exam.shortAnswerQuestions?.length || 0;
 
               return (
                 <div
@@ -193,18 +263,19 @@ export default function OnTapClient() {
                       <p className="font-mono text-xs text-sea-deep font-semibold">{tfCount} câu · 16 ý (4,0 điểm)</p>
                     </div>
                     <div className="rounded-2xl border border-star/10 bg-void/60 p-3.5 text-center">
-                      <span className="text-xl">💡</span>
-                      <p className="mt-1 font-display text-sm font-bold text-star">Phần III: Vận dụng thực tế</p>
-                      <p className="font-mono text-xs text-coral-deep font-semibold">{essayCount} bài toán tình huống</p>
+                      <span className="text-xl">✍️</span>
+                      <p className="mt-1 font-display text-sm font-bold text-star">Phần III: Trả lời ngắn</p>
+                      <p className="font-mono text-xs text-coral-deep font-semibold">{saCount} câu hỏi số liệu/thuật ngữ</p>
                     </div>
                   </div>
 
                   <div className="flex justify-end pt-2">
                     <button
                       onClick={() => handleStartExam(exam)}
-                      className="w-full sm:w-auto rounded-full bg-gradient-to-r from-leaf via-sea to-coral px-8 py-3.5 font-display text-base font-extrabold text-white shadow-card hover:shadow-glow-leaf transition hover:-translate-y-0.5 cursor-pointer"
+                      className="w-full sm:w-auto rounded-full bg-gradient-to-r from-leaf via-sea to-coral px-8 py-3.5 font-display text-base font-extrabold text-white shadow-card hover:shadow-glow-leaf transition hover:-translate-y-0.5 cursor-pointer flex items-center justify-center gap-2"
                     >
-                      Bắt đầu làm bài ngay →
+                      <span>Bắt đầu vào phòng thi</span>
+                      <span>→</span>
                     </button>
                   </div>
                 </div>
@@ -217,9 +288,10 @@ export default function OnTapClient() {
   }
 
   // MÀN HÌNH 2: ĐANG LÀM BÀI HOẶC ĐÃ NỘP BÀI
-  const { scoreP1, scoreP2, totalScore, p1Correct, p2Details } = calculateScores();
+  const { scoreP1, scoreP2, scoreP3, totalScore, p1Correct, p3Correct, p2Details } = calculateScores();
   const mcqQuestions = selectedExam.questions;
   const tfQuestions = selectedExam.tfQuestions || [];
+  const shortAnswerQuestions = selectedExam.shortAnswerQuestions || [];
   const essayQuestions = selectedExam.essayQuestions || [];
 
   // Đếm số câu đã làm
@@ -232,13 +304,13 @@ export default function OnTapClient() {
     });
     if (qDone) tfDone++;
   });
-  const essayDone = Object.values(essayInputs).filter((t) => t.trim().length > 0).length;
+  const saDone = Object.values(shortAnswers).filter((t) => t.trim().length > 0).length;
 
   return (
     <main className="min-h-screen px-4 py-8 sm:px-6">
       <div className="mx-auto max-w-4xl">
         {/* THANH TRẠNG THÁI CỐ ĐỊNH PHÒNG THI */}
-        <div className="sticky top-3 z-30 flex flex-wrap items-center justify-between gap-3 rounded-2xl border border-star/20 bg-void-card/95 p-4 backdrop-blur shadow-card">
+        <div className="sticky top-16 z-30 flex flex-wrap items-center justify-between gap-3 rounded-2xl border border-star/20 bg-void-card/95 p-4 backdrop-blur shadow-card">
           <div>
             <button
               onClick={() => setSelectedExam(null)}
@@ -247,14 +319,15 @@ export default function OnTapClient() {
               ← Thoát & Chọn đề khác
             </button>
             <p className="mt-0.5 font-display text-sm sm:text-base font-bold text-star truncate max-w-[240px] sm:max-w-md">
-              {selectedExam.title}
+              {studentName ? `${studentName} (${className || "10"})` : selectedExam.title}
             </p>
           </div>
 
           <div className="flex items-center gap-3">
             {!submitted ? (
               <span className="flex items-center gap-1.5 rounded-full border border-coral/40 bg-coral/10 px-4 py-1.5 font-mono text-sm sm:text-base font-bold text-coral">
-                ⏱️ {formatTime(timeLeft)}
+                <Clock className="w-4 h-4 text-coral" />
+                <span>{formatTime(timeLeft)}</span>
               </span>
             ) : (
               <span className="rounded-full bg-leaf/20 px-4 py-1.5 font-mono text-base font-extrabold text-leaf-deep">
@@ -277,9 +350,17 @@ export default function OnTapClient() {
         {submitted && (
           <div className="mt-6 animate-pop-in rounded-3xl border-2 border-leaf/40 bg-void-card p-6 sm:p-8 text-center shadow-card">
             <span className="text-5xl">{totalScore >= 8.0 ? "🎉🏆⭐" : totalScore >= 6.5 ? "🌱👍" : "💪📖"}</span>
-            <h2 className="mt-3 font-display text-2xl sm:text-3xl font-extrabold text-star">
+            
+            {studentName && (
+              <p className="mt-2 font-mono text-xs uppercase tracking-wider text-leaf-deep font-bold">
+                Thí sinh: {studentName} · Lớp: {className || "Khối 10 Phục Hòa"}
+              </p>
+            )}
+
+            <h2 className="mt-2 font-display text-2xl sm:text-3xl font-extrabold text-star">
               Kết quả thi: {totalScore} / 10 điểm
             </h2>
+            
             <p className="mt-1 font-mono text-sm text-leaf-deep font-semibold">
               {totalScore >= 9.0
                 ? "Xuất sắc! Nắm rất vững kiến thức Công nghệ Trồng trọt 10!"
@@ -302,9 +383,9 @@ export default function OnTapClient() {
                 <p className="text-[11px] text-star-soft">Chuẩn điểm QĐ 764 Bộ GD</p>
               </div>
               <div className="rounded-2xl border border-star/10 bg-void/50 p-4">
-                <p className="text-xs text-star-soft">Phần III (Vận dụng)</p>
-                <p className="mt-1 font-display text-xl font-bold text-coral-deep">4 Tình huống</p>
-                <p className="text-[11px] text-star-soft">Đối chiếu theo Rubric chấm</p>
+                <p className="text-xs text-star-soft">Phần III (Trả lời ngắn)</p>
+                <p className="mt-1 font-display text-xl font-bold text-coral-deep">{p3Correct} / {shortAnswerQuestions.length} câu</p>
+                <p className="text-[11px] text-star-soft">Chính xác thuật ngữ/số</p>
               </div>
             </div>
 
@@ -365,7 +446,7 @@ export default function OnTapClient() {
                 : "border border-star/15 bg-void-card text-star hover:border-leaf/40"
             }`}
           >
-            Phần III: Vận dụng ({essayDone}/{essayQuestions.length})
+            Phần III: Trả lời ngắn ({saDone}/{shortAnswerQuestions.length})
           </button>
         </div>
 
@@ -594,75 +675,91 @@ export default function OnTapClient() {
         )}
 
         {/* ======================================================== */}
-        {/* PHẦN III: 4 CÂU HỎI VẬN DỤNG THỰC TIỄN */}
+        {/* PHẦN III: 4 CÂU HỎI TRẮC NGHIỆM TRẢ LỜI NGẮN */}
         {/* ======================================================== */}
         {(activeTab === "all" || activeTab === "part3") && (
           <section className="mt-12">
             <div className="flex flex-wrap items-center justify-between gap-2 border-b border-coral/30 pb-3">
               <div>
                 <span className="font-mono text-xs font-bold uppercase tracking-wider text-coral-deep">
-                  Phần III: Câu hỏi Vận dụng & Tình huống thực tiễn
+                  Phần III: Câu hỏi trắc nghiệm Trả lời ngắn
                 </span>
                 <h2 className="font-display text-lg sm:text-xl font-bold text-star">
-                  Gồm 4 bài toán tình huống thực hành kỹ thuật nông nghiệp địa phương
+                  Gồm 4 câu hỏi (Thí sinh tự điền đáp án ngắn, con số hoặc thuật ngữ chính xác)
                 </h2>
               </div>
               <span className="rounded-full bg-coral/15 px-3 py-1 font-mono text-xs text-coral-deep font-semibold">
-                Đã ghi câu trả lời: {essayDone} / {essayQuestions.length}
+                Đã điền: {saDone} / {shortAnswerQuestions.length} câu
               </span>
             </div>
 
             <div className="mt-6 space-y-8">
-              {essayQuestions.map((q, qIdx) => {
-                const isOpen = showEssayAnswers[qIdx] || submitted;
-                const userInput = essayInputs[qIdx] || "";
+              {shortAnswerQuestions.map((q, qIdx) => {
+                const userVal = shortAnswers[qIdx] || "";
+                const isCorrect = checkShortAnswer(userVal, q.correctAnswers);
 
                 return (
                   <div
                     key={q.id || qIdx}
-                    id={`essay-${qIdx + 1}`}
+                    id={`sa-${qIdx + 1}`}
                     className="rounded-3xl border border-star/15 bg-void-card p-5 sm:p-7 shadow-card"
                   >
                     <div className="flex items-center justify-between text-xs text-star-soft">
                       <span className="font-mono font-bold text-coral-deep">
-                        Tình huống Vận dụng {qIdx + 1} / 4
+                        Câu {qIdx + 1} / 4 (Trả lời ngắn)
                       </span>
-                      <button
-                        onClick={() => toggleEssayAnswer(qIdx)}
-                        className="font-mono text-xs font-semibold text-leaf-deep hover:underline cursor-pointer"
-                      >
-                        {isOpen ? "Ẩn đáp án & Rubric ▲" : "Xem đáp án & Rubric ▼"}
-                      </button>
+                      {submitted && (
+                        <span
+                          className={`font-mono font-bold px-2.5 py-0.5 rounded-full ${
+                            isCorrect
+                              ? "bg-leaf/20 text-leaf-deep"
+                              : "bg-berry/20 text-berry"
+                          }`}
+                        >
+                          {isCorrect ? "✓ Chính xác" : "✕ Chưa chính xác"}
+                        </span>
+                      )}
                     </div>
 
-                    <p className="mt-3 font-display text-base sm:text-lg font-bold text-star leading-relaxed whitespace-pre-line">
+                    <p className="mt-3 font-display text-base sm:text-lg font-bold text-star leading-relaxed">
                       {q.q}
                     </p>
 
-                    {/* Khung để học sinh tự nhập câu trả lời */}
-                    <div className="mt-4">
-                      <label className="block font-mono text-xs text-star-soft mb-1.5">
-                        ✍️ Câu trả lời / Phương án xử lý của em:
-                      </label>
-                      <textarea
-                        value={userInput}
-                        onChange={(e) => handleEssayChange(qIdx, e.target.value)}
-                        placeholder="Nhập phương án kỹ thuật, các bước thực hiện và cơ sở lý luận khoa học..."
-                        rows={4}
-                        className="w-full rounded-2xl border border-star/15 bg-void/50 p-4 font-sans text-sm text-star placeholder-star-soft/40 focus:border-coral focus:outline-none transition leading-relaxed"
-                      />
+                    {/* Ô nhập câu trả lời ngắn */}
+                    <div className="mt-4 flex flex-col sm:flex-row sm:items-center gap-3">
+                      <div className="relative flex-1">
+                        <input
+                          type="text"
+                          value={userVal}
+                          onChange={(e) => handleShortAnswerChange(qIdx, e.target.value)}
+                          disabled={submitted}
+                          placeholder={q.unit ? `Nhập câu trả lời (${q.unit})...` : "Nhập câu trả lời ngắn gọn..."}
+                          className={`w-full rounded-2xl border p-3.5 font-mono text-sm sm:text-base text-star placeholder-star-soft/40 focus:outline-none transition ${
+                            submitted
+                              ? isCorrect
+                                ? "border-leaf bg-leaf/10 text-leaf-deep font-bold"
+                                : "border-berry bg-berry/10 text-berry"
+                              : "border-star/20 bg-void/50 focus:border-coral"
+                          }`}
+                        />
+                      </div>
+                      {q.unit && (
+                        <span className="font-mono text-xs text-star-soft self-start sm:self-center px-2">
+                          Đơn vị: <strong>{q.unit}</strong>
+                        </span>
+                      )}
                     </div>
 
-                    {/* Hướng dẫn giải / Đáp án đối chiếu */}
-                    {isOpen && (
-                      <div className="mt-4 rounded-2xl border border-coral/30 bg-coral/5 p-4 sm:p-5 text-sm leading-relaxed text-star">
-                        <div className="flex items-center gap-2 font-display font-bold text-coral-deep mb-2">
-                          <span>📋</span>
-                          <span>Hướng dẫn chấm & Đáp án chuẩn:</span>
+                    {/* Hiển thị đáp án đối chiếu sau khi nộp */}
+                    {submitted && (
+                      <div className="mt-4 rounded-2xl border border-coral/20 bg-coral/5 p-4 text-xs sm:text-sm leading-relaxed text-star">
+                        <div className="flex items-center gap-2 font-mono font-bold mb-1">
+                          <span className="text-coral-deep">🎯 Đáp án được chấp nhận:</span>
+                          <span className="text-star underline">{q.correctAnswers.join(" / ")}</span>
                         </div>
-                        <div className="whitespace-pre-line text-xs sm:text-sm text-star-soft leading-relaxed font-sans bg-void/40 p-4 rounded-xl border border-star/10">
-                          {q.answer}
-                        </div>
+                        <p className="text-star-soft mt-1 leading-relaxed">
+                          <strong>💡 Lời giải thích:</strong> {q.explain}
+                        </p>
                       </div>
                     )}
                   </div>
@@ -677,12 +774,13 @@ export default function OnTapClient() {
           <div className="mt-12 flex flex-col items-center justify-center gap-3 pb-16">
             <button
               onClick={handleSubmit}
-              className="rounded-full bg-gradient-to-r from-leaf via-sea to-coral px-10 py-4 font-display text-base sm:text-lg font-extrabold text-white shadow-card hover:shadow-glow-leaf transition hover:-translate-y-1 cursor-pointer"
+              className="rounded-full bg-gradient-to-r from-leaf via-sea to-coral px-10 py-4 font-display text-base sm:text-lg font-extrabold text-white shadow-card hover:shadow-glow-leaf transition hover:-translate-y-1 cursor-pointer flex items-center gap-2"
             >
-              Hoàn thành bài thi & Xem kết quả chấm điểm →
+              <Award className="w-5 h-5 text-white" />
+              <span>Hoàn thành bài thi & Nộp kết quả chấm điểm →</span>
             </button>
             <p className="font-mono text-xs text-star-soft">
-              Đã làm {mcqDone}/24 câu Phần I · {tfDone}/4 câu Phần II · {essayDone}/4 câu Phần III
+              Đã làm {mcqDone}/24 câu Phần I · {tfDone}/4 câu Phần II · {saDone}/4 câu Phần III
             </p>
           </div>
         )}

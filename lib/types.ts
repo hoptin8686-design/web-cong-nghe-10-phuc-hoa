@@ -27,6 +27,15 @@ export type EssayQuestion = {
   answer: string; // Hướng dẫn giải / đáp án đối chiếu
 };
 
+export type ShortAnswerQuestion = {
+  id: string;
+  q: string;
+  code?: string;
+  correctAnswers: string[]; // Danh sách đáp án được công nhận đúng
+  explain: string; // Giải thích chi tiết
+  unit?: string; // Đơn vị đo hoặc ghi chú gợi ý
+};
+
 export type LessonExtra = {
   tf: TFQuestion[];
   essay: EssayQuestion[];

@@ -1,4 +1,4 @@
-import type { Question, TFQuestion, EssayQuestion } from "@/lib/types";
+import type { Question, TFQuestion, EssayQuestion, ShortAnswerQuestion } from "@/lib/types";
 
 export interface MockExam {
   id: string;
@@ -8,7 +8,8 @@ export interface MockExam {
   durationMinutes: number;
   questions: Question[]; // Phần I: 24 câu trắc nghiệm nhiều lựa chọn
   tfQuestions: TFQuestion[]; // Phần II: 4 câu đúng / sai (mỗi câu 4 mệnh đề)
-  essayQuestions: EssayQuestion[]; // Phần III: 4 câu vận dụng thực tiễn
+  shortAnswerQuestions: ShortAnswerQuestion[]; // Phần III: 4 câu trả lời ngắn
+  essayQuestions?: EssayQuestion[]; // Tình huống vận dụng mở rộng
 }
 
 export const MOCK_EXAMS: MockExam[] = [
@@ -412,6 +413,36 @@ export const MOCK_EXAMS: MockExam[] = [
             explain: "Đúng. Mụn dừa thô chứa nhiều muối (EC cao) và tannin/lignin kết tủa gây ức chế hô hấp của rễ cây non, cần xử lý bằng vôi và xả nước sạch nhiều lần."
           }
         ]
+      }
+    ],
+    shortAnswerQuestions: [
+      {
+        id: "sa-01",
+        q: "Để cải tạo 1 ha đất đồi dốc bị chua có độ pH = 4.2 tại Cao Bằng, theo khuyến cáo kỹ thuật cần sử dụng bao nhiêu tấn vôi bột (CaCO₃) để nâng độ pH lên mức thích hợp khoảng 6.0? (Nhập số thập phân)",
+        unit: "tấn",
+        correctAnswers: ["1.5", "1,5", "1.5 tấn", "1,5 tấn"],
+        explain: "Với đất chua pH = 4.2 và thành phần cơ giới thịt nhẹ, lượng vôi bột cần bón trung bình khoảng 1.5 tấn/ha (tương đương 150 kg/sào Bắc Bộ) để đẩy ion H+, Al3+ và nâng pH lên 6.0."
+      },
+      {
+        id: "sa-02",
+        q: "Trong kỹ thuật trồng rau xà lách thủy canh màng mỏng dinh dưỡng (NFT), chỉ số độ dẫn điện EC tối ưu của dung dịch dinh dưỡng nằm trong khoảng từ 1.2 mS/cm đến bao nhiêu mS/cm?",
+        unit: "mS/cm",
+        correctAnswers: ["1.6", "1,6", "1.6 mS/cm", "1,6 mS/cm"],
+        explain: "Đối với rau xà lách, chỉ số EC tối ưu là từ 1.2 đến 1.6 mS/cm. Nếu vượt quá 1.6 mS/cm cây sẽ bị áp suất thẩm thấu cao gây cháy chóp rễ và mép lá."
+      },
+      {
+        id: "sa-03",
+        q: "Tên chi vi khuẩn có khả năng sống cộng sinh ở nốt sần rễ cây họ Đậu để cố định nitơ tự do từ không khí thành dạng đạm NH₄⁺ cho cây trồng là gì?",
+        unit: "Tên khoa học",
+        correctAnswers: ["Rhizobium", "rhizobium", "Vi khuẩn Rhizobium", "vi khuẩn rhizobium"],
+        explain: "Vi khuẩn Rhizobium cộng sinh trong nốt sần rễ cây họ Đậu, có enzym nitrogenase chuyển hóa khí N2 trơ thành dạng đạm hữu dụng cho cây trồng."
+      },
+      {
+        id: "sa-04",
+        q: "Khi thực hiện kỹ thuật nhân giống cây ăn quả bằng phương pháp ghép nêm, lớp mô nào nằm giữa vỏ và gỗ của cành ghép và gốc ghép bắt buộc phải áp sát khít vào nhau để liền sẹo?",
+        unit: "Thuật ngữ",
+        correctAnswers: ["Tầng sinh mô", "tầng sinh mô", "Tượng tầng", "tượng tầng", "Cambium", "cambium"],
+        explain: "Tầng sinh mô (tượng tầng / cambium) là lớp tế bào phân sinh sơ cấp; khi hai tầng sinh mô áp khít vào nhau thì các tế bào mới phân chia tạo mạch dẫn thông suốt nuôi cành ghép."
       }
     ],
     essayQuestions: [
