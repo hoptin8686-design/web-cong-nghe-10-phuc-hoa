@@ -115,18 +115,23 @@ export default function HomeClient({
           className="mt-8 flex flex-col items-start justify-between gap-4 rounded-3xl border-2 border-leaf/40 bg-gradient-to-r from-leaf/[0.15] via-void-card to-sea/[0.15] p-5 sm:p-6 shadow-card transition hover:-translate-y-1 hover:border-leaf hover:shadow-card-hover sm:flex-row sm:items-center cursor-pointer"
         >
           <div>
-            <span className="rounded-full bg-leaf/20 px-3 py-1 font-mono text-xs font-bold text-leaf-deep">
-              ⚡ Dành riêng cho học sinh lớp 10
-            </span>
+            <div className="flex flex-wrap items-center gap-2">
+              <span className="rounded-full bg-leaf/20 px-3 py-1 font-mono text-xs font-bold text-leaf-deep">
+                ⚡ Cấu trúc mới nhất GDPT 2018
+              </span>
+              <span className="rounded-full bg-sea/20 px-3 py-1 font-mono text-xs font-bold text-sea-deep">
+                24 Trắc nghiệm · 4 Đúng/Sai · 4 Vận dụng
+              </span>
+            </div>
             <h2 className="mt-2 font-display text-xl sm:text-2xl font-bold text-star">
-              🎯 Ôn tập Kiểm tra Định kì — Giữa kì & Cuối kì
+              🎯 Phòng Ôn tập & Thi thử Chuẩn Cấu trúc — Công nghệ 10
             </h2>
             <p className="mt-1 text-xs sm:text-sm text-star-soft">
-              Bộ đề thi trắc nghiệm bấm giờ 45 phút, bao quát trọn vẹn kiến thức và chấm điểm tự động kèm lời giải chi tiết.
+              Đề thi toàn diện 3 phần bấm giờ 45 phút, chấm điểm tự động chuẩn Bộ GD&ĐT (thang điểm 10) kèm lời giải khoa học & rubric chấm chi tiết.
             </p>
           </div>
-          <span className="shrink-0 rounded-full bg-gradient-to-r from-leaf to-sea px-5 py-2.5 font-display text-sm font-bold text-void shadow-card hover:shadow-glow-leaf transition font-extrabold">
-            Luyện đề ngay →
+          <span className="shrink-0 rounded-full bg-gradient-to-r from-leaf to-sea px-6 py-3 font-display text-sm font-bold text-void shadow-card hover:shadow-glow-leaf transition font-extrabold">
+            Vào phòng thi ngay →
           </span>
         </Link>
 
